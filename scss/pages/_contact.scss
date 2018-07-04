@@ -1,0 +1,30 @@
+/* contact page
+================================================= */
+
+.contact {
+    .page-content,
+    .page-content h2,
+    .page-content p {
+        text-align: center !important;
+    }
+    .page-content p {
+        margin-bottom: 38px !important;
+    }
+    hr {
+        margin-bottom: 52px;
+        margin-top: -25px;
+    }
+    .email {
+        margin-top: 24px;
+        margin-bottom: 95px;
+        width: 232px;
+        font-size: 18px;
+    }
+    .div-box {
+        padding-bottom: 0px;
+    }
+    .map {
+        height: 84vh;
+        margin-top: -80px;
+    }
+}

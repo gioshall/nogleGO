@@ -1,0 +1,160 @@
+/* careers page - jobdetail
+================================================= */
+.careers-jobdetail {
+        padding-top: 100px;
+        background-size: cover;
+        section{position: relative;}
+        main{
+        	.row{
+	        	//width:43%;
+	        	width: 50%;
+	        	@include max-screen(1200px) {width: 90%;}
+      		 }
+	        h3 {
+	            color: black;
+	            @include max-screen(767px) {
+	           		margin-bottom: 30px;
+	            }
+	        }
+      	}
+        .lead{
+			margin-bottom: 120px;
+        	line-height: 32px;
+		}
+		.pure-g {
+    		letter-spacing:0em;
+		}
+		.container{
+			background: none;
+			&.last-div{
+				padding-bottom: 300px;
+			}
+		}
+        /* btn of visit */
+        .visit {
+            display: block;
+            margin: 0 auto;
+            margin-top: 40px;
+            width: 230px;
+            font-size: 18px;
+            color: $color-primary;
+            border-color: $color-primary;
+            &:hover {
+                color: white;
+                background-color: $color-primary;
+            }
+        }
+        h2{
+        	text-align: center;
+        	margin-bottom: 32px;
+        }
+        hr{margin-bottom: 56px;}
+        .jobdetail_icon {
+            text-align: center;
+            img {
+                display: block;
+                margin: 0 auto;
+                margin-bottom: 28px;
+                margin-top: 100px;
+            }
+        }
+        ul {
+            list-style: inherit;
+            list-style-position: inside;
+            margin-top: 0;
+            margin-bottom: 100px;
+            li{
+            	line-height: 24px;
+            }
+            &.job-description{
+            	li{text-indent: -10px;text-indent: -13px;}
+            	margin-left: 20px;
+            }
+            &.job-requirements{
+            	margin-bottom: 0px;
+            	list-style-type: none;
+				li {
+				  background: no-repeat url(#{$imageUrlRoot}job-detail/num.png)left top;
+				  min-height: 96px;
+				  height: 100%;
+				  padding-left: 50px;
+				  padding-top: 4px; 
+				  position: relative;
+				  margin-left: 2px;
+				 	&:before {
+						content: "";
+					    height:60%;
+					    width:1px;
+					    background: #979797;
+					    position: absolute;
+					    margin-left: -33.5px;
+					    margin-top: 36px;
+					}
+					&:last-child:before{height: 0;}
+				}
+       		}
+        }
+        /* Layout : footer, colored baground */
+        .container {
+            padding: 0 20px;
+        }
+
+		.triangle-position{
+			position: absolute;
+			top: 600px;
+			width: 100%;
+			z-index: -1;
+            .triangle{
+                min-height: 758px;
+                @include background-size(cover);
+                @include opacity(0.4);
+            }
+		}
+        /* Case specific background style ----------------------------------------------------- */
+        .job_manager{
+            .triangle{
+            	background: no-repeat url(#{$imageUrlRoot}job-detail/bg_manager.png)center 20%;
+            }
+        }
+        .job_3d{
+            .triangle{
+            	background: no-repeat url(#{$imageUrlRoot}job-detail/bg_3d.png)center;
+                @include max-screen(468px) {
+                    background-position: 14% 14%;
+                }
+            }
+        }
+        .job_designer{
+            .triangle{
+            	background: no-repeat url(#{$imageUrlRoot}job-detail/bg_designer.png)center;
+                @include max-screen(468px) {
+                    background-position: 88% center;
+            }
+        }
+        .job_clothing{
+            .triangle{
+            	background: no-repeat url(#{$imageUrlRoot}job-detail/bg_clothingPatternmaker.png)center;
+            }
+        }
+        .job_engineer{
+            .triangle{
+            	background: no-repeat url(#{$imageUrlRoot}job-detail/bg_engineer.png)center;
+                @include max-screen(468px) {
+                    background-position: 37% 90%;
+                }
+            }
+        }
+        .job_administration{
+            .triangle{
+            	background: no-repeat url(#{$imageUrlRoot}job-detail/bg_administration.png)center;
+            }
+        }
+        .job_data{
+            .triangle{
+            	background: no-repeat url(#{$imageUrlRoot}job-detail/bg_data.png)center; 
+                @include max-screen(468px) {
+                    background-position: 66% 21%;
+                }               
+            }
+        }
+    }

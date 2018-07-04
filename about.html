@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>Nogle</title>
+    <meta name="theme-color" content="#00488B">
+    <meta name="msapplication-TileColor" content="#00488B">
+    <link rel="icon" sizes="192x192" href="images/nogle-browsericon.png">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <!--[if lt IE 9]>
+      <script src="js/ie/html5.js"></script>
+      <script src="js/ie/respond.js"></script>
+      <script src="js/modernizr.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Java Script
+   ================================================== -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/flexslider-min.js"></script>
+    <script src="js/nogle.parallax.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ($(window).width() >= 1024) { //web
+                console.log("web");
+                //parameter
+                //1:delay fadeIn,  
+                //2:auto fadeOut (default true)
+                $(".customer, .shareholder, .staff").scrollfadeIn(40, false);
+                $(".behavior1, .behavior2, .behavior3, .behavior4, .behavior5").scrollfadeInUp(40, false);
+                $(".effect-leaderphoto").scrollfadeInUp(50, false);
+
+                //parameter
+                //1:background-position x
+                //2:background-position y movespeed 
+                $(".about-mission").BgParallax("50%", 6);
+                $(".banner-content").BgParallax("50%", 0.9);
+                //parameter
+                //1:move-up speed
+                //2:translateY unit. (default:%) "%"  or "px"   
+                $(".members_number").parallaxTransY(0.2, "%");
+                $('.color-box').parallaxTransY(0.15, "%");
+                $('.rocket').parallaxTransY(1.5, "pt");
+                $('.cloud').parallaxTransY(-0.1, "pt");
+                //$(".effect-leaderphoto:nth-child(1)").parallaxTransY(0.6, "%");
+                //$(".effect-leaderphoto:nth-child(2)").parallaxTransY(1, "%");
+                //$(".effect-leaderphoto:nth-child(3)").parallaxTransY(0.4, "%");
+                //$(".effect-leaderphoto:nth-child(4)").parallaxTransY(0.8, "%");
+                // $(".effect-leaderphoto:nth-child(6)").parallaxTransY(0.3, "%");
+                // $(".effect-leaderphoto:nth-child(7)").parallaxTransY(0.7, "%");
+                //$(".effect-leaderphoto:nth-child(8)").parallaxTransY(1.1, "%");
+                // $(".effect-leaderphoto:nth-child(9)").parallaxTransY(0.3, "%");
+
+            } else { //mobile
+                console.log("mobile");
+                //parameter
+                //1:delay fadeIn,  
+                //2:auto fadeOut (default true)
+                // $(".customer, .shareholder, .staff, .behavior1, .behavior2, .behavior3, .behavior4, .behavior5").scrollfadeIn(-100, false);
+                // $(".effect-leaderphoto").scrollfadeIn(-260, false);
+                //parameter
+                //1:background-position x
+                //2:background-position y movespeed 
+                // $(".about-mission").BgParallax("50%", 6);
+                // $(".banner-content").BgParallax("50%", 0.9);
+                //parameter
+                //1:move-up speed
+                //2:translateY unit. (default:%) "%"  or "px"   
+                // $(".members_number").parallaxTransY(0, "%");
+                //$('.color-box').parallaxTransY(0.1, "%");
+                $('.rocket').parallaxTransY(1.5, "pt");
+                // $('.cloud').parallaxTransY(-0.1, "pt");
+                // $(".effect-leaderphoto:nth-child(1)").parallaxTransY(0, "%");
+                //$(".effect-leaderphoto:nth-child(2)").parallaxTransY(0, "%");
+                // $(".effect-leaderphoto:nth-child(3)").parallaxTransY(0, "%");
+                //  $(".effect-leaderphoto:nth-child(4)").parallaxTransY(0, "%");
+                // $(".effect-leaderphoto:nth-child(6)").parallaxTransY(0, "%");
+                // $(".effect-leaderphoto:nth-child(7)").parallaxTransY(0, "%");
+                // $(".effect-leaderphoto:nth-child(8)").parallaxTransY(0, "%");
+                //$(".effect-leaderphoto:nth-child(9)").parallaxTransY(0, "%");
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Header============ -->
+    <header>
+        <div class="row pure-g">
+            <div class="pure-u-1 columns">
+                <div class="logo">
+                    <a href="index.html"><img alt="" src="images/logo.png"></a>
+                </div>
+                <nav id="nav-wrap">
+                    <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+                        <span class="hamburger hamburger-1"></span>
+                        <span class="hamburger hamburger-2"></span>
+                        <span class="hamburger hamburger-3"></span>
+                    </a>
+                    <a class="mobile-btn" href="#" title="Hide navigation">
+                        <span class="hamburger hamburger-1"></span>
+                        <span class="hamburger hamburger-2"></span>
+                        <span class="hamburger hamburger-3"></span>
+                    </a>
+                    <ul id="nav" class="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="current"><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="process.html">Our Process</a></li>
+                        <li><a href="casestudy.html">Case Studies</a></li>
+                        <li><a href="career.html">Careers</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+    <main>
+        <section class="about">
+            <!-- banner start-->
+            <div class="banner triangle">
+                <div class="banner-content">
+                    <div class="headline">
+                        <h3>Hello World,</h3>
+                        <h1>We are Nogle.</h1>
+                    </div>
+                </div>
+                <div class="triangle-bottom-right"></div>
+            </div>
+            <!-- banner end-->
+            <!-- Style Demo-->
+            <div class="page-content">
+                <div class="row">
+                    <div class="pure-g">
+                        <div class="div-nobox">
+                            <div class="pure-u-1 pure-u-lg-2-5 l-box">
+                                <h2>Our People</h2>
+                            </div>
+                            <div class="pure-u-1 pure-u-lg-3-5 l-box">
+                                <p>Nogle is a group of professional individuals committed to building a radically different approach to software design, development and management. Thinking critically and disruptively to help our clients achieve their goals and help them succeed. </p>
+                                <p>Through experimentation and innovation, we champion software excellence to revolutionize the information technology industry, use technology to help our customers have a competitive advantage and extract more out of existing systems.</p>
+                                <p>We bring together the most capable, driven and passionate people to analyse business models, apply innovative technological solutions and achieve sustainable business models by having an integral and cohesive approach between software design, development and management; hardware; and business goals.</p>
+                                <p>At Nogle we have created teams specialized in different areas of hardware and software design, development and delivery. These teams independently work on all projects along with other teams under the supervision of the project leaders. This ensures the most specialized development in all aspects of the technology for each of our projects.</p>
+                            </div>
+                            <div class="members_number">
+                                <div class="number_box">
+                                    <h2>86</h2>
+                                    <p>NOGLELITES</p>
+                                </div>
+                                <div class="number_box white_arrowbox">
+                                    <h2>13</h2>
+                                    <p>NATIONALITIES</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Style box with color-box left-->
+            <div class="pure-g add-bottom add-color-box about-mission triangle">
+                <div class="triangle-up-right"></div>
+                <div class="triangle-bottom-right"></div>
+                <div class="row">
+                    <div class="color-box pure-u-1 pure-u-md-3-8  pure-u-lg-1-3 color-box-left" title="The Mission">
+                        <h2>The Mission</h2>
+                        <p>Never stop improving. Allow for inspiration and innovation. Learn from each other. The Nogle vision is one that keeps learning, innovating, and never stops improving to always excel.</p>
+                        <p>Utilizing technology and forward-thinking to continuously innovate, challenge traditional business models, be disruptive and empower our customers in becoming global leaders in their respective industries.
+                        </p>
+                    </div>
+                    <div class="cloud"></div>
+                    <div class="pure-u-1 pure-u-md-5-8 pure-u-lg-2-3 l-box div-content-right">
+                        <div class="rocket"></div>
+                        <ul class="mission-list">
+                            <li class="customer">
+                                <h3>TO OUR CUSTOMERS</h3>
+                                <p>Delivering innovative, specialized solutions to address specific challenges, enable competitive advantages and/or efficiency, in consideration to sustainable and economically sound business models.</p>
+                            </li>
+                            <li class="shareholder">
+                                <h3>TO OUR SHAREHOLDERS</h3>
+                                <p>Of course to maximize profit, optimize productivity, but also to create a unique company filled with passionate and happy individuals, loyal and committed to our success and our customer’s success.</p>
+                            </li>
+                            <li class="staff">
+                                <h3>TO OUR STAFF</h3>
+                                <p>Foster the areas of each person’s excellence, inspire and motivate passion, prosperity and a healthy work-life balance, where every single person contributes to our success and the Nogle vision.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- End Style box with color-box left-->
+            <!--The Nogle Behavior-->
+            <div class="row">
+                <div class="common-box last-div behavior">
+                    <h2>The Nogle Values</h2>
+                    <ul>
+                        <li class="behavior1">
+                            <div class="behavior_number">1</div>
+                            <div class="behavior_title">
+                                <h5>Honesty & Respectful</h5>
+                            </div>
+                            <div class="behavior_content">
+                                <p>You are sincere and thoughtful to both yourself and your colleagues.</p>
+                                <p>You are non-political when you disagree with others.</p>
+                                <p>You admit to your mistakes and shortcomings and strive to improve on them.</p>
+                            </div>
+                        </li>
+                        <li class="behavior2">
+                            <div class="behavior_number">2</div>
+                            <div class="behavior_title">
+                                <h5>Curious and Inquisitive</h5>
+                            </div>
+                            <div class="behavior_content">
+                                <p>You are curious and able to learn quickly and eagerly.</p>
+                                <p>You seek knowledge and understanding of how important your role is in what we are doing, how impactful it is to the market.</p>
+                            </div>
+                        </li>
+                        <li class="behavior3">
+                            <div class="behavior_number">3</div>
+                            <div class="behavior_title">
+                                <h5>Grit</h5>
+                            </div>
+                            <div class="behavior_content">
+                                <p>You will do whatever it takes to complete the task, the ability to persevere.</p>
+                                <p>You are positive, optimistic and confident.</p>
+                            </div>
+                        </li>
+                        <li class="behavior4">
+                            <div class="behavior_number">4</div>
+                            <div class="behavior_title">
+                                <h5>Passion</h5>
+                            </div>
+                            <div class="behavior_content">
+                                <p>You have the desire to see the team succeed.</p>
+                                <p>You believe in what you do and in your teammates.</p>
+                                <p>You inspire others with your aspiration.</p>
+                            </div>
+                        </li>
+                        <li class="behavior5">
+                            <div class="behavior_number">5</div>
+                            <div class="behavior_title">
+                                <h5>Good Judgement</h5>
+                            </div>
+                            <div class="behavior_content">
+                                <p>You consider all facts before making wise decisions.</p>
+                                <p>You are able to identify articulately the root cause of any problem and formulate a solution to it.</p>
+                                <p>You identify articulately what you are and are not, when getting things done.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+            </div>
+            <!-- Style box with color-box right-->
+            <div class="pure-g add-bottom default-box about-lead triangle last-div">
+                <div class="triangle-up-right"></div>
+                <div class="row">
+                    <div class="pure-u-1 l-box div-content">
+                        <h2>Leaders</h2>
+                        <hr>
+                        <div class="photohover">
+                            <figure class="effect-leaderphoto">
+                                <img src="images/about/Jonathan.jpg" alt="" />
+                                <figcaption>
+                                    <div class="style-head">
+                                        <h2>Johnathan Leong</h2>
+                                        <p>Founder</p>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                            <figure class="effect-leaderphoto">
+                                <img src="images/about/Calvin.png" alt="Calvin Lim" />
+                                <figcaption>
+                                    <div class="style-head">
+                                        <h2>Calvin Lim</h2>
+                                        <p>Chief Operating Officer</p>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                            <figure class="effect-leaderphoto">
+                                <img src="images/about/Stephen.jpg" alt="" />
+                                <figcaption>
+                                    <div class="style-head">
+                                        <h2>Stephen Lynch</h2>
+                                        <p>Managing Director, Fashion Tech</p>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                            <figure class="effect-leaderphoto">
+                                <img src="images/about/ed.jpg" alt="" />
+                                <figcaption>
+                                    <div class="style-head">
+                                        <h2>Edward Wen</h2>
+                                        <p>Managing Director, Financial Services</p>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                            <div class="clear-both"></div>
+                            <figure class="effect-leaderphoto">
+                                <img src="images/about/Hank.jpg" alt="" />
+                                <figcaption>
+                                    <div class="style-head">
+                                        <h2>Hank Huang</h2>
+                                        <p>Vice President, Financial Services</p>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                            <figure class="effect-leaderphoto">
+                                <img src="images/about/carlos.jpg" alt="" />
+                                <figcaption>
+                                    <div class="style-head">
+                                        <h2>Carlos Salas</h2>
+                                        <p>Chief Commercial Officer</p>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                            <figure class="effect-leaderphoto">
+                                <img src="images/about/Allis.jpg" alt="" />
+                                <figcaption>
+                                    <div class="style-head">
+                                        <h2>Allis Kuo</h2>
+                                        <p>Director, Research & Development</p>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                            <figure class="effect-leaderphoto">
+                                <img src="images/about/wee.jpg" alt="" />
+                                <figcaption>
+                                    <div class="style-head">
+                                        <h2>Ta Wee Dher</h2>
+                                        <p>Business Development Director</p>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Style box with color-box right-->
+        </section>
+    </main>
+    <!-- footer
+================================================== -->
+    <footer class="about_footer">
+        <div class="triangle-footer-right"></div>
+        <div class="footer-section">
+            <div class="row pure-g">
+                <div class="pure-u-1 pure-u-mg-2-5 pure-u-lg-2-5 columns">
+                    <div class="footer-logo"></div>
+                </div>
+                <div class="pure-u-1 pure-u-mg-3-5 pure-u-lg-3-5 columns">
+                    <div class="footer-group">
+                        <h3>NOGLE</h3>
+                        <a href="services.html">Services</a>
+                        <a href="process.html">Our Processes</a>
+                        <a href="casestudy.html">Case Studies</a>
+                    </div>
+                    <div class="footer-group">
+                        <h3>COMPANY</h3>
+                        <a href="about.html">About Us</a>
+                        <a href="career.html#job-openings">Careers</a>
+                        <a href="career.html#nogle-life">Life at Nogle</a>
+                        <a href="career.html#game-changers">Game Changer</a>
+                    </div>
+                    <div class="footer-group">
+                        <h3>CONNECT</h3>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row pure-g">
+                <div class="pure-u-1 columns">
+                    <ul class="footer-nav">
+                        <li><a href="policy.html">Terms of Use & Privacy Policy</a></li>
+                        <li>Copyright © 2016 Nogle Limited. All rights reserved.</li>
+                    </ul>
+                </div>
+                <div id="go-top" style=""><a title="Back to Top" href="#">Go To Top</a></div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End-->
+    <!-- navigation transition -->
+    <script src="js/custom.js"></script>
+    <!-- main banner slider -->
+    <script type="text/javascript" charset="utf-8">
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                controlNav: true,
+                animation: 'fade',
+                animationLoop: true,
+                slideshow: true,
+                video: false,
+                before: function () {
+                    $('video').each(function () {
+                        $(this).get(0).load();
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

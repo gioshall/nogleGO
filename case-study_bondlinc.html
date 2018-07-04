@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Nogle - BONDLINC</title>
+    <meta name="theme-color" content="#00488B">
+    <meta name="msapplication-TileColor" content="#00488B">
+    <link rel="icon" sizes="192x192" href="images/nogle-browsericon.png">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <!--[if lt IE 9]>
+      <script src="js/ie/html5.js"></script>
+      <script src="js/ie/respond.js"></script>
+      <script src="js/modernizr.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Java Script
+   ================================================== -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/flexslider-min.js"></script>
+    <script src="js/nogle.parallax.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //parameter
+            //1:background-position x
+            //2:background-position y movespeed	
+            $(".case-study.nts").BgParallax("100%", -5);
+
+
+            if ($(window).width() >= 1024) { //web
+                console.log("web");
+                //parameter
+                //1:delay fadeIn,  
+                //2:auto fadeOut (default true)
+                $("blockquote").scrollfadeIn(10, false);
+                // $(".case-study_pic").scrollfadeIn(10, false);
+
+            } else { //mobile
+                console.log("mobile");
+                //parameter
+                //1:delay fadeIn,  
+                //2:auto fadeOut (default true)
+                // $("blockquote").scrollfadeIn(-600, false);
+                // $(".case-study_pic").scrollfadeIn(-600, false);
+            }
+
+        });
+    </script>
+
+
+    <!-- main banner slider -->
+    <script type="text/javascript" charset="utf-8">
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                controlNav: true,
+                animation: 'fade',
+                animationLoop: true,
+                slideshow: true,
+                video: false,
+                before: function () {
+                    $('video').each(function () {
+                        $(this).get(0).load();
+                    });
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body class="case-study bondlinc">
+    <!-- Header============ -->
+    <header class="white-bg">
+        <div class="row pure-g">
+            <div class="pure-u-1 columns">
+                <div class="logo">
+                    <a href="index.html"><img alt="" src="images/logo_grey.png"></a>
+                </div>
+                <nav id="nav-wrap">
+                    <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+                        <span class="hamburger hamburger-1 _is_wt-bg"></span>
+                        <span class="hamburger hamburger-2 _is_wt-bg"></span>
+                        <span class="hamburger hamburger-3 _is_wt-bg"></span>
+                    </a>
+                    <a class="mobile-btn" href="#" title="Hide navigation">
+                        <span class="hamburger hamburger-1 _is_wt-bg"></span>
+                        <span class="hamburger hamburger-2 _is_wt-bg"></span>
+                        <span class="hamburger hamburger-3 _is_wt-bg"></span>
+                    </a>
+                    <ul id="nav" class="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="process.html">Our Process</a></li>
+                        <li class="current"><a href="casestudy.html">Case Studies</a></li>
+                        <li><a href="career.html">Careers</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+    <main>
+        <section>
+            <div class="container">
+                <!-- logo and visit button -->
+                <div class="row pure-g">
+                    <div class="common-box">
+                        <div class="pure-u-1 pure-u-lg-1-6"></div>
+                        <div class="pure-u-1 pure-u-lg-2-3 case-study_logo">
+                            <img src="images/logo_bondlinc.jpg" style="width:200px">
+                            <p class="lead">
+                                Mobile trading platform for corporate and sovereign bonds designed for private banking customers.
+                            </p>
+                            <hr>
+                            <a href="#" class="btn-bordered visit">Visit BONDLINC</a>
+                        </div>
+                        <div class="pure-u-1 pure-u-lg-1-6"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container">
+                <div class="row pure-g">
+                    <div class="common-box">
+                        <div class="pure-u-1 pure-u-lg-1-6"></div>
+                        <div class="pure-u-1 pure-u-lg-2-3">
+                            <p>Private banks (PB) are always looking for ways to create more value for their clients and increase their assets under management through innovative offerings. Currently, there is no mobile app for private clients to trade bonds. Bonds are a core holding for most private banking clients. Furthermore, there is no organized way for private banks to convey their range of products to clients in a user-friendly manner. </p>
+                            <blockquote>
+                                <p>BONDLINC is the solution to both those problems and will become the new standard for private banking.
+                                </p>
+                            </blockquote>
+
+                        </div>
+                        <div class="pure-u-1 pure-u-lg-1-6"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container _is_colored triangle">
+            <div class="triangle-up-right"></div>
+                <div class="row pure-g">
+                    <div class="common-box">
+                        <div class="pure-u-1 pure-u-lg-1-6"></div>
+                        <div class="pure-u-1 pure-u-lg-2-3">
+                            <img src="images/case_bond01.jpg" class="case-study_pic _is_indent">
+                            <div class="clearfix"></div>
+                            <p>BONDLINC partnered with Nogle to develop such a solution. A new world in the private banking is emerging, and partnerships are becoming its key theme as BONDLINC provided market knowledge while Nogle provided the technology solutions.</p>
+                            <p>The system demands stability and high quality – such that BONDLINC can offer both clients and customers smooth business process, swift realization and a quick release to the market. Quick, short cycle iterations ensured the project ran within the time frame allocated. Working in a truly Agile manner, the team collaborated closely – co-locating, daily stand ups, continuous integration and automated testing were key to their success.</p>
+                            <p>The results? BONDLINC has presented their new business innovation to private banks and landed key industry clients.</p>
+                            <img src="images/case_bond02.png" class="case-study_pic">
+                            <blockquote class="_is_indent">
+                                <p>Nogle has amazing processes and methodology that accelerate the learning curve and the most impressive one is how they manage the cost so efficiently.
+                                </p>
+                                <cite>BONDLINC representative</cite>
+                            </blockquote>
+                            <div class="clearfix"></div>
+                            <a href="#" class="btn-bordered visit">Visit BONDLINC</a>
+
+                        </div>
+                        <div class="pure-u-1 pure-u-lg-1-6"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    <!-- footer
+================================================== -->
+    <footer>
+        <div class="triangle-footer-right"></div>
+        <div class="footer-section">
+            <div class="row pure-g">
+                <div class="pure-u-1 pure-u-mg-2-5 pure-u-lg-2-5 columns">
+                    <div class="footer-logo"></div>
+                </div>
+                <div class="pure-u-1 pure-u-mg-3-5 pure-u-lg-3-5 columns">
+                    <div class="footer-group">
+                        <h3>NOGLE</h3>
+                        <a href="services.html">Services</a>
+                        <a href="process.html">Our Processes</a>
+                        <a href="casestudy.html">Case Studies</a>
+                    </div>
+                    <div class="footer-group">
+                        <h3>COMPANY</h3>
+                        <a href="about.html">About Us</a>
+                        <a href="career.html#job-openings">Careers</a>
+                        <a href="career.html#nogle-life">Life at Nogle</a>
+                        <a href="career.html#game-changers">Game Changer</a>
+                    </div>
+                    <div class="footer-group">
+                        <h3>CONNECT</h3>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row pure-g">
+                <div class="pure-u-1 columns">
+                    <ul class="footer-nav">
+                        <li><a href="policy.html">Terms of Use & Privacy Policy</a></li>
+                        <li>Copyright © 2016 Nogle Limited. All rights reserved.</li>
+                    </ul>
+                </div>
+                <div id="go-top" style=""><a title="Back to Top" href="#">Go To Top</a></div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End-->
+    <!-- navigation transition -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

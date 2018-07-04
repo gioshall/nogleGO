@@ -1,0 +1,353 @@
+/* home page
+================================================= */
+
+.homepage {
+    @include max-screen(768px) {
+        .color-box:before {
+            background-color: #00488B;
+            // padding: 16px 0px 0px 56px;
+        }
+    }
+    @include max-screen(767px) {
+        .color-box:before {
+            // padding: 16px 10px 0px 56px;
+        }
+    }
+    h3 {
+        text-align: center;
+        margin: 30px 0px 0px 0px;
+    }
+    hr {
+        margin-bottom: 50px;
+    }
+    .longbluebox {
+        z-index: 100;
+        margin-top: -300px;
+        margin-left: 28%;
+        padding-bottom: 100px;
+        background-color: #00488B;
+        opacity: 0.85;
+        // padding: 45px 150px 45px 60px;
+        position: relative;
+        .triangle-bottom-left {
+            left: 0;
+        }
+        @include max-screen(768px) {
+            // padding: 45px 60px;
+            margin-left: 5%;
+        }
+        @include max-screen(767px) {
+            h2 {
+                // margin: 0px 0px 16px 0px;
+            }
+        }
+        @include max-screen(430px) {
+            h2 {
+                // margin: 0px 0px 54px 0px;
+            }
+        }
+        @include max-screen(320px) {
+            h2 {
+                // margin: 0px 0px 5px 0px;
+            }
+        }
+    }
+    .service {
+        margin: -1px 0px 0px 0px;
+        h2 {
+            text-align: center;
+            margin: 36px 0px 30px 0px;
+        }
+        button {
+            margin: 26px 0px 20px 0px;
+        }
+        h5 {
+            line-height: 23px;
+            min-height: 60px;
+            padding-top: 5px;
+        }
+    }
+    .icon_height {
+        min-height: 200px;
+    }
+    .icon_img {
+        width: 70px !important;
+    }
+    .icon_p {
+        width: 100% !important;
+    }
+    .case_study {
+        margin: 184px 0px 0px 0px;
+        text-align: center;
+        @include max-screen(768px) {
+            margin: 132px 0px 0px 0px;
+        }
+        a {
+            margin: 0px 0px 80px 0px;
+        }
+        p {
+            padding: 0px 100px 0px 100px;
+            margin: 0px 0px 60px 0px;
+            @include max-screen(320px) {
+                padding: 0px 50px 0px 50px;
+            }
+        }
+        h2 {
+            text-align: center;
+            margin: 0px 0px 30px 0px;
+        }
+        .threecase {
+            margin-top: 200px;
+            padding-bottom: 400px;
+            .case1 {
+                height: 344px;
+                z-index: 10;
+                position: absolute;
+                top: 587px;
+                left: -20px;
+                background-image: url("../images/homepage/case_img_1.png");
+                background-size: 136%;
+                background-repeat: no-repeat;
+                background-position: center;
+                @include max-screen(768px) {
+                    top: 570px;
+                    left: 0;
+                    min-height: 410px;
+                }
+                @include screen(767px,
+                768px) {
+                    width: 100%;
+                }
+                @include max-screen(375px) {
+                    top: 592px;
+                    left: 0;
+                    min-height: 410px;
+                }
+            }
+            .case1_a {
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: absolute;
+                img {
+                    width: 50%;
+                    margin-top: 110px;
+                    @include max-screen(768px) {
+                        margin-top: 138px;
+                    }
+                }
+                hr {
+                    width: 7%;
+                    min-width: 50px;
+                    text-align: left;
+                    margin: 15px auto 30px;
+                    border: none;
+                    border-bottom: 1px solid #fff;
+                }
+                .describe {
+                    color: #fff;
+                    padding: 0px 50px;
+                    text-align: center;
+                }
+            }
+            .case2 {
+                min-height: 410px;
+                z-index: 5;
+                position: absolute;
+                top: 622px;
+                left: 28%;
+                background-image: url("../images/homepage/case_img_2.png");
+                background-size: 130%;
+                background-position: center;
+                background-repeat: no-repeat;
+                @include max-screen(768px) {
+                    top: 980px;
+                    left: 0
+                }
+                @include screen(767px,
+                768px) {
+                    width: 100%;
+                }
+                @include max-screen(320px) {
+                    top: 937px;
+                    left: 0
+                }
+            }
+            .case2_a {
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: absolute;
+                img {
+                    width: 50%;
+                    margin-top: 90px;
+                }
+                hr {
+                    width: 7%;
+                    min-width: 50px;
+                    text-align: left;
+                    margin: 15px auto 30px;
+                    border: none;
+                    border-bottom: 1px solid #fff;
+                }
+                .describe {
+                    color: #fff;
+                    padding: 0px 50px;
+                    text-align: center;
+                }
+                h3 {
+                    COLOR: #fff;
+                    margin: 142px 0px 40px 0px;
+                    font-weight: bold;
+                    letter-spacing: 4px;
+                    font-size: 34px;
+                }
+            }
+            .case3 {
+                min-height: 410px;
+                z-index: 3;
+                position: absolute;
+                top: 537px;
+                right: -3%;
+                background-image: url("../images/homepage/case_img_3.png");
+                background-size: 130%;
+                background-position: center;
+                background-repeat: no-repeat;
+                @include max-screen(768px) {
+                    top: 1389px;
+                    left: 0
+                }
+                @include screen(767px,
+                768px) {
+                    width: 100%;
+                }
+                @include max-screen(375px) {
+                    top: 1367px;
+                    left: 0
+                }
+                @include max-screen(320px) {
+                    top: 1281px;
+                    left: 0
+                }
+            }
+            .case3_a {
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: absolute;
+                img {
+                    width: 50%;
+                    margin-top: 100px;
+                }
+                hr {
+                    width: 7%;
+                    min-width: 50px;
+                    text-align: left;
+                    margin: 15px auto 30px;
+                    border: none;
+                    border-bottom: 1px solid #fff;
+                }
+                .describe {
+                    color: #fff;
+                    padding: 0px 50px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .overlay {
+        background: rgba(0, 0, 0, .35);
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        -webkit-transition: opacity .25s ease;
+        -moz-transition: opacity .25s ease;
+        position: absolute;
+    }
+    .case1:hover .overlay {
+        opacity: 1;
+    }
+    .case1:hover {
+        background-size: auto 103%;
+        background-position: center;
+        transition: background-size 0.2s linear;
+        -moz-transition: background-size 0.2s linear;
+        -ms-transition: background-size 0.2s linear;
+        -o-transition: background-size 0.2s linear;
+        -webkit-transition: background-size 0.2s linear;
+    }
+    .case2:hover .overlay {
+        opacity: 1;
+    }
+    .case2:hover {
+        background-size: 110%;
+        background-position: center;
+        transition: background-size 0.2s linear;
+        -moz-transition: background-size 0.2s linear;
+        -ms-transition: background-size 0.2s linear;
+        -o-transition: background-size 0.2s linear;
+        -webkit-transition: background-size 0.2s linear;
+    }
+    .case3:hover .overlay {
+        opacity: 1;
+    }
+    .case3:hover {
+        background-size: 110%;
+        background-position: center;
+        transition: background-size 0.2s linear;
+        -moz-transition: background-size 0.2s linear;
+        -ms-transition: background-size 0.2s linear;
+        -o-transition: background-size 0.2s linear;
+        -webkit-transition: background-size 0.2s linear;
+    }
+    .case_study_field {
+        min-height: 1092px;
+        @include max-screen(768px) {
+            min-height: 1863px;
+            margin-top: 44px;
+        }
+        @include max-screen(320px) {
+            min-height: 1696px;
+        }
+    }
+    .with-description {
+        > li {
+            padding: 0 20px;
+            min-height: 240px;
+            &:nth-child(7) {
+                padding: 0 5% 0 15%;
+            }
+            &:nth-child(8) {
+                padding: 0 15% 0px 5%;
+            }
+        }
+    }
+}
+
+.footer_s {
+    margin-top: -200px;
+    /* background-color: #ccc; */
+    .mask_bk_r {
+        height: 322px;
+        z-index: 5;
+    }
+    @include max-screen(768px) {
+        margin-top: -150px;
+    }
+}
+
+.biglogo {
+    @include min-screen(1201px) {
+        width: 16% !important;
+    }
+    @include max-screen(1200px) {
+        width: 26% !important;
+    }
+    @include max-screen(768px) {
+        width: 36% !important;
+    }
+    @include max-screen(480px) {
+        width: 45% !important;
+    }
+}

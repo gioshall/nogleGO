@@ -1,0 +1,426 @@
+/* careers page
+================================================= */
+
+.career {
+    overflow: hidden;
+    img {
+        @include rounded(0px);
+    }
+    h2 {
+        margin-bottom: 36px;
+        + hr {
+            margin-bottom: 40px;
+        }
+    }
+    .div-nobox {
+        margin-top: -70px;
+    }
+    .color-box {
+        background-color: darken($color-primary, 5%);
+        &.work-or-play {
+            position: relative;
+            margin: 0 auto 890px;
+            @include max-screen(890px) {
+                margin-bottom: 700px;
+            }
+            @include max-screen(768px) {
+                margin-bottom: 530px;
+            }
+            @include max-screen(468px) {
+                margin-bottom: 270px;
+            }
+            @include max-screen(320px) {
+                margin-bottom: -90px;
+            }
+        }
+        &:before {
+            @include max-screen(768px) {
+                background-color: darken($color-primary, 5%);
+                top: -40px;
+            }
+        }
+        &.color-box-right {
+            @include max-screen (468px) {
+                margin-top: 0;
+            }
+        }
+    }
+    .thinkBig {
+        background:transparent url('#{$imageUrlRoot}bg_thingBig.jpg') center no-repeat;
+        @include background-size(cover);
+    }
+    .lead {
+        color: #fff;
+    }
+    .block-thinkBig {
+        height: 640px;
+        @include max-screen(768px) {
+            display: none;
+        }
+    }
+    .common-box {
+        // padding-left: 16.7%;
+        // padding-right: 16.7%;
+    }
+    .play-pic {
+        position: absolute;
+    }
+    .lifephoto01 {
+        top: 300px;
+        left: -12%;
+        z-index: 10;
+        @include max-screen(768px) {
+            left: -16px;
+        }
+        @include min-screen(321px) {
+            top: 390px;
+        }
+        @include max-screen(320px) {
+            top: 440px;
+        }
+    }
+    .lifephoto02 {
+        top: 450px;
+        right: 16%;
+        z-index: 9;
+        @include min-screen(320px) {
+            top: 490px;
+            right: -3%;
+        }
+        @include min-screen(375px) {
+            top: 420px;
+        }
+        @include max-screen(767px) {
+            right: -16%;
+        }
+    }
+    .lifephoto03 {
+        top: 880px;
+        left: 0px;
+        z-index: 11;
+        @include max-screen(768px) {
+            left: -160px;
+        }
+    }
+    .lifephoto04 {
+        top: 1095px;
+        right: 0px;
+        z-index: 11;
+        @include max-screen(768px) {
+            top: 1135px;
+        }
+        @include max-screen(568px) {
+            right: -15%;
+        }
+        @include max-screen(468px) {
+            right: -45%;
+        }
+    }
+    .lifephoto05 {
+        top: 1540px;
+        left: -70px;
+        z-index: 12;
+        @include max-screen(800px) {
+            top: 1260px;
+        }
+        @include max-screen(468px) {
+            top: 1360px;
+        }
+    }
+}
+
+.nav-sub {
+    position: absolute;
+    margin-top: -80px;
+    width: 100%;
+    z-index: 101;
+    @include switch();
+    @include max-screen (768px) {
+        z-index: 101;
+    }
+    + .page-content {
+        @include max-screen (568px) {
+            margin-top: 20px;
+        }
+        .common-box {
+            @include max-screen (768px) {
+                padding-top: 50px;
+            }
+            @include max-screen (568px) {
+                padding-top: 50px;
+            }
+        }
+    }
+    &.show {
+        position: fixed;
+        top: 136px;
+        height: 58px;
+        z-index: 102;
+        background-color: rgba(255, 255, 255, 0.95);
+        -webkit-transition: height 0.25s ease 0.1s;
+        -moz-transition: height 0.25s ease 0.1s;
+        -ms-transition: height 0.25s ease 0.1s;
+        -o-transition: height 0.25s ease 0.1s;
+        transition: height 0.25s ease 0.1s;
+        @include switch();
+        @include max-screen (768px) {
+            // height: auto;
+        }
+        .sub-menu {
+            .current {
+                a {
+                   padding-bottom: 18px; 
+                }
+            }
+        }
+    }
+}
+
+.sub-menu {
+    @include max-screen (568px) {
+        padding: 21px 0px 7px;
+        margin: 0 auto;
+        height: 54px;
+    }
+    li {
+        float: right;
+        letter-spacing: normal;
+        padding: 9px 11px 18px;
+        @include max-screen (568px) {
+            text-align: left;
+            display: inline-block;
+            text-align: left;
+            padding: 0 10px;
+        }
+        a {
+            font-size: 15px;
+            color: $color-text-light;
+            &:hover {
+                color: $color-primary;
+                @include switch(background-color);
+            }
+            @include max-screen (359px) {
+                font-size: 12px;
+            }
+        }
+        &.current {
+            a {
+                color: $color-primary;
+                padding-bottom: 14px;
+                border-bottom: 1px solid $color-primary;
+            }
+        }
+    }
+}
+
+.careers_game-changers {
+    padding: 140px 20px;
+    @include max-screen (568px) {
+        padding: 80px 20px;
+    }
+    background:repeat url("#{$imageUrlRoot}bg-sand.png") center;
+    h2 {
+        text-align: center;
+    }
+    /* Layout */
+    .pure-g {
+        position: relative;
+        margin-bottom: 30px;
+        &.short {
+            margin-bottom: 0px;
+        }
+    }
+    @media screen and (min-width: 64em) and (max-width:80em) {
+        .pure-u-lg-3-5,
+        .pure-u-lg-7-12 {
+            min-width: 600px;
+        }
+    }
+    .dashed-line {
+        display: block;
+        height: 1px;
+        width: 100%;
+        border-bottom: 1px dashed $color-primary;
+        margin-top: 49px;
+    }
+    .solid-line {
+        display: inline-block;
+        height: 1px;
+        width: 17px;
+        border-bottom: 1px solid $color-primary;
+        position: relative;
+        top: -49px;
+        margin: 0px 3px;
+    }
+    .solid-circle {
+        display: inline-block;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background-color: $color-primary;
+        position: relative;
+        top: -45px;
+    }
+    @media screen and (max-width: 64em) {
+        .pure-g.short {
+            margin-bottom: 30px;
+        }
+        .dashed-line,
+        .solid-line,
+        .solid-circle {
+            display: none;
+        }
+        .game-changers_photo {
+            display: block;
+            margin: 0 auto;
+        }
+        .game-changers_intro {
+            display: block;
+            margin: 0px auto;
+            float: none;
+            padding-top: 20px;
+            h3 {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.game-changers_photo {
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid #9B9B9B;
+    span {
+        display: block;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        margin: 4px auto;
+    }
+    /* game chamgers photos */
+    .changer-1 {
+        background: url("../images/employees/01_Vincent-Chang.jpg") no-repeat;
+        background-size: cover;
+    }
+    .changer-2 {
+        background: url("../images/employees/02_Casey-Huang.jpg") no-repeat;
+        background-size: cover;
+    }
+    .changer-3 {
+        background: url("../images/employees/03_Vincent-Wen.jpg") no-repeat;
+        background-size: cover;
+    }
+    .changer-4 {
+        background: url("../images/employees/04_Ting-Wang.jpg") no-repeat;
+        background-size: cover;
+    }
+    .changer-5 {
+        background: url("../images/employees/05_Charlie-Mai.jpg") no-repeat;
+        background-size: cover;
+    }
+    .changer-6 {
+        background: url("../images/employees/06_Ginny-Ko.jpg") no-repeat;
+        background-size: cover;
+    }
+}
+
+.game-changers_intro {
+    width: 100%;
+    max-width: 420px;
+    display: inline-block;
+    margin: 0px 10px;
+    float: right;
+    padding-top: 36px;
+    h3 {
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+    }
+}
+
+@media screen and (min-width:80em) {
+    .game-changers_intro.short {
+        max-width: 250px;
+    }
+}
+
+
+/* Job openings */
+
+.careers_job-openings {
+    margin-bottom: 250px;
+    padding: 20px;
+    h2 {
+        text-align: center;
+    }
+    .job-openings-intro {
+        margin-bottom: 50px;
+    }
+    .job-list {
+        padding: 10px 0;
+        cursor: pointer;
+        min-height: 120px;
+        .bullet {
+            position: absolute;
+            float: left;
+            width: 32px;
+            height: 32px;
+            border: 1px solid $color-primary;
+            border-radius: 50%;
+            span {
+                width: 4px;
+                height: 4px;
+                display: block;
+                border-radius: 50%;
+                background-color: $color-primary;
+                margin: 0 auto;
+                margin-top: 13px;
+            }
+        }
+        .job-title {
+            font-size: 20px;
+            display: inline-block;
+            line-height: 30px;
+            vertical-align: top;
+            float: left;
+            max-width: 320px;
+            margin-left: 80px;
+        }
+        .job-intro {
+            margin: 0px;
+        }
+        @media screen and (max-width: 64em) {
+            .job-intro {
+                margin-top: 20px;
+                margin-left: 80px;
+            }
+        }
+    }
+    .job-page {
+        ul {
+            text-align: center;
+            font-size: 24px;
+        }
+        li {
+            display: inline-block;
+            padding: 0 16px;
+            a {
+                color: #9B9B9B;
+                &.active {
+                    color: $color-primary;
+                    border-bottom: 1px solid $color-primary;
+                }
+            }
+        }
+    }
+}
+
+
+/* Internship */
+
+.careers_internship {
+    height: 50vh;
+}

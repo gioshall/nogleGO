@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>Nogle - Our Process</title>
+    <meta name="theme-color" content="#00488B">
+    <meta name="msapplication-TileColor" content="#00488B">
+    <link rel="icon" sizes="192x192" href="images/nogle-browsericon.png">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <!--[if lt IE 9]>
+      <script src="js/ie/html5.js"></script>
+      <script src="js/ie/respond.js"></script>
+      <script src="js/modernizr.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Java Script
+   ================================================== -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/flexslider-min.js"></script>
+	<script src="js/nogle.parallax.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+	   if($(window).width() >= 1024){ //web
+                console.log("web");
+	
+		//parameter
+		//1:delay fadeIn,  
+		//2:auto fadeOut (default true)
+		$(".hide").scrollfadeIn(-200);
+		$(".startpoint").scrollfadeIn(-200);
+		$(".point.discover, .point.design, .point.experimentation").scrollfadeIn(100);
+		$(".satellite-map .satellite").scrollfadeIn(-100);
+		$(".point.mainPoint").scrollfadeIn(400);				
+		$(".lineA, .lineB, .lineC, .lineD").scrollfadeIn(200);		
+		$(".lineE").scrollfadeIn(-500);
+		$(".rocket").scrollfadeInUp(0);
+		//parameter
+		//1:background-position x
+		//2:background-position y movespeed	
+		$(".satellite_bg").css("background-attachment","fixed");
+		$(".rocket-launch").BgParallax("50%", 0.5);
+			
+		}else{ //mobile
+            console.log("mobile");
+            // $(".hide").scrollfadeIn(-600, false);
+            // $(".startpoint").scrollfadeIn(-500, false);
+            // $(".point.discover, .point.design, .point.experimentation").scrollfadeIn(-500, false);
+            // $(".satellite-map .satellite").scrollfadeIn(-100, false);
+            // $(".point.mainPoint").scrollfadeIn(400, false);                
+            // $(".lineA, .lineB, .lineC, .lineD").scrollfadeIn(-100, false);      
+            // $(".lineE").scrollfadeIn(-500, false);
+            // $(".rocket").scrollfadeInUp(0);
+
+            // // $(".satellite_bg").BgParallax("50%", 1.3);
+            // $(".satellite_bg").css("background-attachment","fixed");
+            // $(".rocket-launch").BgParallax("50%", 0.5);
+			}
+    });
+	
+	</script>
+
+    
+</head>
+
+<body>
+    <!-- Header============ -->
+    <header>
+        <div class="row pure-g">
+            <div class="pure-u-1 columns">
+                <div class="logo">
+                    <a href="index.html"><img alt="" src="images/logo.png"></a>
+                </div>
+                <nav id="nav-wrap">
+                    <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+                        <span class="hamburger hamburger-1"></span>
+                        <span class="hamburger hamburger-2"></span>
+                        <span class="hamburger hamburger-3"></span>
+                    </a>
+                    <a class="mobile-btn" href="#" title="Hide navigation">
+                        <span class="hamburger hamburger-1"></span>
+                        <span class="hamburger hamburger-2"></span>
+                        <span class="hamburger hamburger-3"></span>
+                    </a>
+                    <ul id="nav" class="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li class="current"><a href="process.html">Our Process</a></li>
+                        <li><a href="casestudy.html">Case Studies</a></li>
+                        <li><a href="career.html">Careers</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+    <main>
+    <section class="process">
+        <div class="container">
+            <!-- main banner slider -->
+            <div class="large-banner banner pure-u-1 triangle">
+                <ul class="slides slide-content">
+                    <li class="ten pure-u-1 centered text-center banner-content">
+                        <div class="headline">
+                            <h1>Always Improving!</h1>
+                            <!-- <button class="btn-trans-2">I'm hollower</button> -->
+                        </div>
+                    </li>
+                </ul>
+            <div class="triangle-bottom-right"></div>
+            </div>
+            <!-- main banner slider end-->
+        </div>
+        <div class="container">
+            <section>
+                <!-- Style Demo-->
+                <div class="page-content">
+                    <!-- satellite map -->
+                    <div class="satellite-map row">
+                        <img src="images/ic_satellite-pointA.png" class="startpoint" alt="">
+                        <div class="lineA"></div>
+                        <div class="point discover"></div>
+                        <div class="lineB"></div>
+                        <div class="satellite"></div>
+                        <div class="point mainPoint"></div>
+                        <div class="lineC"></div>
+                        <div class="lineD"></div>
+                        <div class="point design"></div>
+                        <div class="point experimentation"></div>
+                        <div class="lineE display-none"></div>
+                        <div class="rocket"></div>
+                    </div>
+                    <!-- satellite map end -->
+                    <div class="row">
+                        <div class="pure-g">
+                            <div class="div-box">
+                                <div class="pure-u-1 hide">
+                                    <h2>Our Process</h2>
+                                    <p class="lead add-bottom">
+                                        We'll help you build capability to get powerful ideas to your customers fast. We'll embed new practices to manage your idea pipeline and work with you to turn the right ideas into software. And we'll help you get your technology in shape to sustain the new pace of innovation. It’s all about creativity and speed. You’ll build culture and capability to carve out and sustain your position as a dynamic market leader.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- page-content End-->
+                    <!-- Style box with color-box right-->
+                    <div class="pure-g add-color-box satellite_bg triangle">
+                    <div class="triangle-up-right"></div>
+                    <div class="triangle-bottom-right"></div>
+                        <div class="row">
+                            <div class="pure-u-1 pure-u-md-5-8 pure-u-lg-2-3 l-box div-content-right hide">
+                                <h2>Discover & Design</h2>
+                                <hr>
+                                We’ll help you in generating ideas and brainstorming the possibilities to make your vision a reality.<br><br> We focus on the collaboration between cross-functional workshops and in-house professionals in addressing the problem and finding the answer. We use competitive analysis and customer research. Profile and persona, empathy maps and customer surveys. Process modeling and rapid prototyping. All customized to your needs in the most dedicated manner.<br><br> Our resource is there to help. If you have any problems or concerns, we’ll help you gather a deeper insight using big data analytics.<br><br> In no time, you’ll have a roadmap that shapes and clarifies the direction of your vision.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Style box with color-box right-->
+                    <!-- common-box -->
+                    <div class="row pure-g">
+                        <div class="pure-u-1 common-box hide" style="padding-bottom: 75px;">
+                            <h2>Experimentation & Implementation</h2>
+                            <hr>
+                            <p>
+                                Once the direction is clear, we’ll begin rapid experimentation and delivery to revitalize what was once only a concept.
+                            </p>
+                            <p>
+                                To adapt to the change of your customers, we integrate experience design with continuous delivery to quickly release and try out new things. We use agile analytics and visualization to measure engagement and generate insights. We use the feedback to help you make better decisions.
+                            </p>
+                            <p>
+                                Being agile during the process is important, but it will only work if your technology can keep up at the same pace. We combine disciplined engineering practices with simple adaptive architectural styles. This will enable you to pivot and adapt to the ever-changing needs of the market and customers.
+                            </p>
+                            <p>
+                                All of which will give you the edge in organizational agility.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- common-box End-->
+                    <!-- Style box with color-box right-->
+                    <div class="pure-g add-bottom default-box rocket-launch triangle">
+                    <div class="triangle-up-right"></div>
+                        <div class="row">
+                            <div class="pure-u-1 common-box hide">
+                                <h2>Testing & Delivery</h2>
+                                <hr>
+                                <p>
+                                    To bring you to a new level of agility, we put testing at the heart of what we do. And we do it right with agile project management to help oversee everything rigorously. 
+                                </p>
+                                <p>
+                                    We use functional and integration testing. Usability and GUI testing. We put the feedback from these findings to guide us in making a more sensible and reliable solution for you. 
+                                </p>
+                                <p>
+                                    With countless testing, this will be the best way to validate the concept and see how the real value is being delivered to your hand.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Style box with color-box right-->
+            </section>
+    </section>
+</main>
+
+    <!-- footer
+================================================== -->
+    <footer class="process_footer">
+        <div class="triangle-footer-right"></div>
+        <div class="footer-section">
+            <div class="row pure-g">
+                <div class="pure-u-1 pure-u-mg-2-5 pure-u-lg-2-5 columns">
+                    <div class="footer-logo"></div>
+                </div>
+                <div class="pure-u-1 pure-u-mg-3-5 pure-u-lg-3-5 columns">
+                     <div class="footer-group">
+                        <h3>NOGLE</h3>
+                        <a href="services.html">Services</a>
+                        <a href="process.html">Our Processes</a>
+                        <a href="casestudy.html">Case Studies</a>
+                    </div>
+                    <div class="footer-group">
+                        <h3>COMPANY</h3>
+                        <a href="about.html">About Us</a>
+                        <a href="career.html#job-openings">Careers</a>
+                        <a href="career.html#nogle-life">Life at Nogle</a>
+                        <a href="career.html#game-changers">Game Changer</a>
+                    </div>
+                    <div class="footer-group">
+                        <h3>CONNECT</h3>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row pure-g">
+                <div class="pure-u-1 columns">
+                    <ul class="footer-nav">
+                        <li><a href="policy.html">Terms of Use & Privacy Policy</a></li>
+                        <li>Copyright © 2016 Nogle Limited. All rights reserved.</li>
+                    </ul>
+                </div>
+                <div id="go-top" style=""><a title="Back to Top" href="#">Go To Top</a></div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End-->
+    <!-- navigation transition -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

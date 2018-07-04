@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>Nogle - NTS</title>
+    <meta name="theme-color" content="#00488B">
+    <meta name="msapplication-TileColor" content="#00488B">
+    <link rel="icon" sizes="192x192" href="images/nogle-browsericon.png">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <!--[if lt IE 9]>
+      <script src="js/ie/html5.js"></script>
+      <script src="js/ie/respond.js"></script>
+      <script src="js/modernizr.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Java Script
+   ================================================== -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/flexslider-min.js"></script>
+    <script src="js/nogle.parallax.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //parameter
+            //1:background-position x
+            //2:background-position y movespeed	
+            $(".case-study.nts").BgParallax("100%", -5);
+
+
+            if ($(window).width() >= 1024) { //web
+                console.log("web");
+                //parameter
+                //1:delay fadeIn,  
+                //2:auto fadeOut (default true)
+                $("blockquote").scrollfadeIn(50, false);
+                // $(".case-study_pic").scrollfadeIn(50, false);
+
+            } else { //mobile
+                console.log("mobile");
+                //parameter
+                //1:delay fadeIn,  
+                //2:auto fadeOut (default true)
+                // $("blockquote").scrollfadeIn(-600, false);
+                // $(".case-study_pic").scrollfadeIn(-600, false);
+            }
+
+
+        });
+    </script>
+
+    <!-- main banner slider -->
+    <script type="text/javascript" charset="utf-8">
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                controlNav: true,
+                animation: 'fade',
+                animationLoop: true,
+                slideshow: true,
+                video: false,
+                before: function () {
+                    $('video').each(function () {
+                        $(this).get(0).load();
+                    });
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body class="case-study nts">
+    <!-- Header============ -->
+    <header class="white-bg">
+        <div class="row pure-g">
+            <div class="pure-u-1 columns">
+                <div class="logo">
+                    <a href="index.html"><img alt="" src="images/logo_grey.png"></a>
+                </div>
+                <nav id="nav-wrap">
+                    <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+                        <span class="hamburger hamburger-1 _is_wt-bg"></span>
+                        <span class="hamburger hamburger-2 _is_wt-bg"></span>
+                        <span class="hamburger hamburger-3 _is_wt-bg"></span>
+                    </a>
+                    <a class="mobile-btn" href="#" title="Hide navigation">
+                        <span class="hamburger hamburger-1 _is_wt-bg"></span>
+                        <span class="hamburger hamburger-2 _is_wt-bg"></span>
+                        <span class="hamburger hamburger-3 _is_wt-bg"></span>
+                    </a>
+                    <ul id="nav" class="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="process.html">Our Process</a></li>
+                        <li class="current"><a href="casestudy.html">Case Studies</a></li>
+                        <li><a href="career.html">Careers</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+    <main>
+        <section>
+            <div class="container">
+                <!-- logo and visit button -->
+                <div class="row pure-g">
+                    <div class="common-box">
+                        <div class="pure-u-1 pure-u-lg-1-6"></div>
+                        <div class="pure-u-1 pure-u-lg-2-3 case-study_logo">
+                            <img src="images/logo_nts.jpg" style="width: 230px;">
+                            <p class="lead">
+                                High-frequency trading platform with software packages and API libraries.
+                            </p>
+                            <hr>
+                            <a href="#" class="btn-bordered visit">Visit NTS</a>
+                        </div>
+                        <div class="pure-u-1 pure-u-lg-1-6"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container">
+                <div class="row pure-g">
+                    <div class="common-box">
+                        <div class="pure-u-1 pure-u-lg-1-6"></div>
+                        <div class="pure-u-1 pure-u-lg-2-3">
+                            <p>SiPower Technology Solutions, a system integration specialist headquartered in ShenZhen, China, designs and implements financial technology solutions for trading institutions and brokerages selects Nogle Trading Solutions to upgrade its risk management framework.</p>
+                            <h3>Opportunity</h3>
+                            <p>To comply with regulatory changes in China, SiPower Technology Solutions needed to upgrade the monitoring and risk-management capabilities for its financial trading toolset.  The challenge was to support the new compliance and oversight requirements without incurring a significant performance delay in their system.  To achieve this, they needed a partner with a firm with experience building low-latency trading systems.
+                            </p>
+                        </div>
+                        <div class="pure-u-1 pure-u-lg-1-6"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container _is_colored triangle">
+            <div class="triangle-up-right"></div>
+                <div class="row pure-g">
+                    <div class="common-box">
+                        <div class="pure-u-1 pure-u-lg-1-6"></div>
+                        <div class="pure-u-1 pure-u-lg-2-3">
+                            <h3>Solutions</h3>
+                            <p>After understanding SiPower’s system architecture and design, Nogle proposed two different technology solutions for SiPower; a hardware-based FPGA solution and C++ software solution.  After much deliberation, SiPower selected the software solution as it would scale more easily.
+                            </p>
+                            <blockquote>
+                                <p>Nogle would build SiPower a risk-management system that would in real-time monitor the position and order risks associated with all its clients.
+                                </p>
+                            </blockquote>
+                            <h3>Key features</h3>
+                            <ul>
+                                <li>Architecture to scale and process bursts of up to a million messages a second </li>
+                                <li>An intuitive front-end to allow the compliance team to monitor the state of their system
+                                </li>
+                                <li>Customizable modules to programmatically respond to messaging violations and risk limits
+                                </li>
+                            </ul>
+                            <img src="images/case_nts01.jpg" class="case-study_pic _is_indent">
+                            <div class="clearfix"></div>
+                            <h3>Result</h3>
+                            <p>In three months, Nogle delivered SiPower a risk-management module that integrated with its existing technology suite.  The module is capable of handling millions of messages a second.  SiPower’s is excited with the new functionality and are currently implementing it across several of the largest brokers in China.
+                            </p>
+                            <a href="#" class="btn-bordered visit">Visit NTS</a>
+
+                        </div>
+                        <div class="pure-u-1 pure-u-lg-1-6"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    <!-- footer
+================================================== -->
+    <footer>
+        <div class="triangle-footer-right"></div>
+        <div class="footer-section">
+            <div class="row pure-g">
+                <div class="pure-u-1 pure-u-mg-2-5 pure-u-lg-2-5 columns">
+                    <div class="footer-logo"></div>
+                </div>
+                <div class="pure-u-1 pure-u-mg-3-5 pure-u-lg-3-5 columns">
+                    <div class="footer-group">
+                        <h3>NOGLE</h3>
+                        <a href="services.html">Services</a>
+                        <a href="process.html">Our Processes</a>
+                        <a href="casestudy.html">Case Studies</a>
+                    </div>
+                    <div class="footer-group">
+                        <h3>COMPANY</h3>
+                        <a href="about.html">About Us</a>
+                        <a href="career.html#job-openings">Careers</a>
+                        <a href="career.html#nogle-life">Life at Nogle</a>
+                        <a href="career.html#game-changers">Game Changer</a>
+                    </div>
+                    <div class="footer-group">
+                        <h3>CONNECT</h3>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row pure-g">
+                <div class="pure-u-1 columns">
+                    <ul class="footer-nav">
+                        <li><a href="policy.html">Terms of Use & Privacy Policy</a></li>
+                        <li>Copyright © 2016 Nogle Limited. All rights reserved.</li>
+                    </ul>
+                </div>
+                <div id="go-top" style=""><a title="Back to Top" href="#">Go To Top</a></div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End-->
+    <!-- navigation transition -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>Nogle - Career</title>
+    <meta name="theme-color" content="#00488B">
+    <meta name="msapplication-TileColor" content="#00488B">
+    <link rel="icon" sizes="192x192" href="images/nogle-browsericon.png">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!--[if lt IE 9]>
+      <script src="js/ie/html5.js"></script>
+      <script src="js/ie/respond.js"></script>
+      <script src="js/modernizr.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Java Script
+   ================================================== -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/flexslider-min.js"></script>
+    <script src="js/nogle.parallax.js"></script>
+    <script src="js/js.cookie.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            if ($(window).width() >= 1024) { //web
+                console.log("web");
+                //parameter
+                //1:delay fadeIn,  
+                //2:auto fadeOut (default true)
+                $(".careers_game-changers .pure-g").scrollfadeInUp(20, false);
+                $(".thinkBig").css("background-attachment", "fixed");
+                $(".thinkBig").BgParallax("50%", 1.2);
+                $('.color-box').parallaxTransY(0.3, "%");
+                $(".lifephoto01").parallaxTransY(0.6, "%");
+                $(".lifephoto02").parallaxTransY(1, "%");
+                $(".lifephoto03").parallaxTransY(0.4, "%");
+                $(".lifephoto04").parallaxTransY(0.3, "%");
+                $(".lifephoto05").parallaxTransY(0.2, "%");
+
+            } else { //mobile
+                console.log("mobile");
+                //parameter
+                //1:delay fadeIn,  
+                //2:auto fadeOut (default true)
+                // $(".careers_game-changers .pure-g").scrollfadeInUp(-600, false);
+
+
+                //parameter
+                //1:background-position x
+                //2:background-position y movespeed	
+                /* Every time the window is scrolled ... */
+
+
+
+            }
+
+            $(window).scroll(function () {
+                var scrollPos = $(window).scrollTop();
+                //console.log(scrollPos   );
+                //nav-sub stick show
+                if (scrollPos >= 685) {
+                    $(".nav-sub").addClass("show");
+
+                } else {
+                    $(".nav-sub").removeClass("show");
+                }
+                //nav-sub highlight
+                if (scrollPos >= 5500) { //job
+                    $('.nav-job').parent().addClass("current");
+                    $('.nav-game').parent().removeClass("current");
+                    $('.nav-life').parent().removeClass("current");
+
+                } else if (scrollPos >= 3500) { //game
+                    $('.nav-job').parent().removeClass("current");
+                    $('.nav-game').parent().addClass("current");
+                    $('.nav-life').parent().removeClass("current");
+                } else { //life
+                    $('.nav-job').parent().removeClass("current");
+                    $('.nav-game').parent().removeClass("current");
+                    $('.nav-life').parent().addClass("current");
+
+                }
+
+            });
+            $('.nav-job').click(function () {
+                $("body, html").animate({
+                    'scrollTop': $('#job-openings').offset().top - 100
+                }, 1000);
+                return false;
+            });
+            $('.nav-game').click(function () {
+                $("body, html").animate({
+                    'scrollTop': $('#game-changers').offset().top - 100
+                }, 1000);
+                return false;
+            });
+            $('.nav-life').click(function () {
+                $("body, html").animate({
+                    'scrollTop': $('#nogle-life').offset().top - 200
+                }, 1000);
+                return false;
+            });
+        });
+    </script>
+    <!-- main banner slider -->
+    <script type="text/javascript" charset="utf-8">
+        const PAGINATION_SIZE = 5;
+        var result = [];
+
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                controlNav: true,
+                animation: 'fade',
+                animationLoop: true,
+                slideshow: true,
+                video: false,
+                before: function () {
+                    $('video').each(function () {
+                        $(this).get(0).load();
+                    });
+                }
+            });
+
+            $(document).on("addSelectFinished", ".select-job", function (event) {
+                $('select').niceSelect();
+            });
+
+            $('select').on('change', function (e) {
+                $('.wrap').empty();
+                $('.job-page').empty();
+                var category = $('.nice-select span').text();
+                Cookies.set('category', category, {
+                    expires: 1
+                });
+                getJobList(category);
+
+            });
+
+            $('.job-page').on('click', function (e) {
+                e.preventDefault();
+                $('.wrap').empty();
+                $('.job-page>ul>li>a').removeClass("active");
+
+                var text = $(e.target).text();
+                var page = parseInt(text);
+                $(e.target).addClass("active");
+                var category = $('.nice-select span').text();
+                var startIndex = (page - 1) * PAGINATION_SIZE;
+                Cookies.set('page', page, {
+                    expires: 1
+                });
+                appendJob(category, startIndex, false);
+            })
+
+            var category = Cookies.get('category');
+            if (category == undefined) {
+                getJobList("All");
+                Cookies.set('category', 'All', {
+                    expires: 1
+                });
+                Cookies.set('page', 1, {
+                    expires: 1
+                });
+            } else {
+                getJobList(category);
+            }
+
+        });
+
+        function getJobList(category) {
+            if (result.length == 0) {
+                $.getJSON("./data/career.json", function (data) {
+                    result = data.job;
+                    var page = Cookies.get('page');
+                    var startIndex = 0;
+                    if (page > 0) {
+                        startIndex = (page - 1) * PAGINATION_SIZE;
+                    }
+                    appendJob(category, startIndex, true);
+                    appendSelect(category);
+                });
+            } else {
+                appendJob(category, 0, true);
+            }
+        }
+
+        function appendSelect(category) {
+            var elem = $('.select-job');
+            elem.append('<option value="">All</option>');
+            for (var i = 0; i < 　result.length; i++) {
+                var obj = result[i];
+                var str = '';
+                if (category == result[i].category) {
+                    str = '<option value="" selected>' + result[i].category + '</option>';
+                } else {
+                    str = '<option value="">' + result[i].category + '</option>';
+                }
+                elem.append(str);
+            }
+            elem.trigger("addSelectFinished");
+        }
+
+        function appendJob(category, startIndex, needAppendPage) {
+            var total = 0;
+            var target = $('.wrap');
+            for (var i = 0; i < 　result.length; i++) {
+                var obj = result[i];
+
+                if (category == "All" || category == obj.category) {
+                    var jobList = obj.jobList;
+                    if (jobList) {
+                        for (var j = 0; j < jobList.length; j++) {
+                            total++;
+                        }
+                    }
+                }
+            }
+
+            var count = 0;
+            var startCount = 0;
+            for (var i = 0; i < 　result.length; i++) {
+                var obj = result[i];
+                if (category == "All" || category == obj.category) {
+                    var jobList = obj.jobList;
+                    if (jobList) {
+                        for (var j = 0; j < jobList.length; j++) {
+                            if (startCount < startIndex) {
+                                startCount++;
+                                continue;
+                            }
+                            count++;
+                            var job = jobList[j];
+                            var elem = $('#templates').children().clone().appendTo(target);
+                            $(elem).find('.job-title').html(job.position);
+                            $(elem).find('.job-intro').html(job.description);
+
+                            var str = 'location.href=\'./jobdetail/' + job.position.replace(/\//g, '_') + '.html\'';
+                            str = str.replace(' ', '%20');
+                            $(elem).attr("onclick", str);
+
+                            if (count == PAGINATION_SIZE) {
+                                break;
+                            }
+
+                        }
+                        if (count == PAGINATION_SIZE) {
+                            break;
+                        }
+                    }
+                }
+            }
+            if (needAppendPage) {
+                appendPage(total)
+            }
+        }
+
+        function appendPage(total) {
+            if (total > PAGINATION_SIZE) {
+                var pages = total / PAGINATION_SIZE;
+
+                var currentPage = 0;
+                if (Cookies.get('page') != undefined && Cookies.get('page') > 0) {
+                    currentPage = Cookies.get('page') - 1;
+                }
+
+                var elem = $('<ul/>');
+                for (var i = 0; i < pages; i++) {
+                    var str = '';
+                    if (i == currentPage) {
+                        str = '<li><a href="#" class="active">' + (i + 1) + '</a></li>'
+                    } else {
+                        str = '<li><a href="#">' + (i + 1) + '</a></li>';
+                    }
+                    elem.append(str);
+                }
+                var target = $('.job-page');
+                elem.appendTo(target);
+            } else {
+                Cookies.set('page', 0, {
+                    expires: 1
+                });
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Header============ -->
+    <header>
+        <div class="row pure-g">
+            <div class="pure-u-1 columns">
+                <div class="logo">
+                    <a href="index.html"><img alt="" src="images/logo.png"></a>
+                </div>
+                <nav id="nav-wrap">
+                    <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+                        <span class="hamburger hamburger-1"></span>
+                        <span class="hamburger hamburger-2"></span>
+                        <span class="hamburger hamburger-3"></span>
+                    </a>
+                    <a class="mobile-btn" href="#" title="Hide navigation">
+                        <span class="hamburger hamburger-1"></span>
+                        <span class="hamburger hamburger-2"></span>
+                        <span class="hamburger hamburger-3"></span>
+                    </a>
+                    <ul id="nav" class="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="process.html">Our Process</a></li>
+                        <li><a href="casestudy.html">Case Studies</a></li>
+                        <li class="current"><a href="career.html">Careers</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+    <main>
+        <section class="career">
+            <div class="container">
+                <!-- main banner slider -->
+                <div class="flexslider large-banner banner pure-u-1 triangle">
+                    <ul class="slides slide-content">
+                        <li class="ten pure-u-1 centered text-center banner-content" style="background: url('images/bg_mainBanner-career.jpg') center no-repeat;background-size: cover;">
+                            <div class="headline">
+                                <h1>Happy people, great work, no coincidence. It’s what we do together that sets us apart.</h1>
+                                <!-- <button class="btn-trans-2">I'm hollower</button> -->
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="triangle-bottom-right"></div>
+                </div>
+                <!-- main banner slider end-->
+            </div>
+            <div class="container">
+                <section>
+                    <!-- Style Demo-->
+                    <nav class="nav-sub">
+                        <div class="row pure-g">
+                            <ul class="sub-menu pure-u-1 column">
+                                <!-- <li><a href="#">Internship</a></li> -->
+                                <li><a href="#" class="nav-job">Job Openings</a></li>
+                                <li><a href="#" class="nav-game">Game Changers</a></li>
+                                <li class="current"><a href="#" class="nav-life">Life at Nogle</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="page-content">
+                        <div class="row pure-g">
+                            <div class="div-nobox pure-u-1" id="nogle-life">
+                                <p>
+                                    At Nogle we strive to find innovative solutions to complex issues in satisfying our core mission to use technology and forward-thinking to continuously innovate, challenge traditional business models, be disruptive and empower our customers in becoming global leaders in their respective industries.
+                                </p>
+                                <p>
+                                    However, what makes working at Nogle unique is the workplace culture that encourages innovation where we don’t believe in the word “impossible”. A healthy balance between work, life and enjoyment, is what fosters great thinking.
+                                </p>
+                                <p class="add-bottom">
+                                    Never stop improving. Allow for inspiration and innovation. Learn from each other. The Nogle vision is one that keeps learning, innovating, and never stop improving to always excel.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- page-content End-->
+                        <!-- Style box with color-box right-->
+                        <div class="pure-g add-bottom add-color-box thinkBig triangle">
+                            <div class="triangle-up-right"></div>
+                            <div class="triangle-bottom-right"></div>
+                            <div class="row">
+                                <div class="color-box pure-u-1 pure-u-md-2-3 color-box-right" title="Think Big!">
+                                    <h2>Think Big!</h2>
+                                    <p class="lead">
+                                        Nogle takes on all sorts of projects. From online virtual fitting solutions, to high frequency trading, to marketplace environments, carpark automation systems, it is clear that we are diverse and problem solvers. We encourage free flow of ideas and experimentation, there is nothing that would not be considered.
+                                    </p>
+                                </div>
+                                <div class="pure-u-1 pure-u-md-1-3 l-box div-content-left block-thinkBig">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Style box with color-box right-->
+                        <!-- common-box -->
+                        <div class="row pure-g" style="position: relative;">
+                            <div class="pure-u-1 common-box" style="padding-bottom: 280px; padding-top: 0;">
+                                <h2 style="text-align: center;">Work or Play? Work of Life?</h2>
+                                <hr>
+                                <p>
+                                    Why not have everything? We have created not only a work environment that is fun and creative but we have filled it with people that along the work journey will become your friends and your family.
+                                </p>
+                            </div>
+                            <div class="pure-u-2-3 color-box work-or-play">
+                                <p class="lead">
+                                    We don’t believe in dull, segmented, divisive beige corporate environments. Our office is open, with senior management working side by side with new recruits, exchanging ideas in a fun, colorful and relaxed workplace.
+                                </p>
+                                <p class="lead">
+                                    A balance between work and lives means happier people, means more creativity, time to think, better solutions, happier customers, better Nogle. It just makes business sense. We constantly organize in-office events, outdoor activities and even one or two parties and trips, to build those bonds between our own people and allow people to have happier more fulfilling lives. Nogle invests in its people, the rest just falls into place.
+                                </p>
+                            </div>
+                            <div class="pure-u-1-2 pure-u-md-1-3 play-pic lifephoto01">
+                                <img src="images/img_lifephoto01.jpg" alt="">
+                            </div>
+                            <div class="pure-u-2-3 pure-u-md-5-12 play-pic lifephoto02">
+                                <img src="images/img_lifephoto02.jpg" alt="">
+                            </div>
+                            <div class="pure-u-2-3 play-pic lifephoto03">
+                                <img src="images/img_lifephoto03.jpg" alt="">
+                            </div>
+                            <div class="pure-u-3-5 pure-u-md-5-12 play-pic lifephoto04">
+                                <img src="images/img_lifephoto04.jpg" alt="">
+                            </div>
+                            <div class="pure-u-5-8 pure-u-md-7-12 play-pic lifephoto05">
+                                <img src="images/img_lifephoto05.jpg" alt="">
+                            </div>
+                        </div>
+                        <!-- common-box End-->
+
+                        <!-- Game changers -->
+                        <div class="page-content careers_game-changers triangle" id="game-changers">
+                            <div class="triangle-up-right"></div>
+                            <div class="triangle-bottom-right"></div>
+                            <div class="row">
+                                <h2>Game Changers</h2>
+                                <hr>
+                                <div class="pure-g career1">
+                                    <div class="pure-u-1 pure-u-lg-1-6 pure-u-xl-1-12"><span class="dashed-line"></span>
+                                    </div>
+                                    <div class="pure-u-1 pure-u-lg-3-5 pure-u-xl-7-12">
+                                        <div class="game-changers_photo">
+                                            <span class="changer-1"></span>
+                                        </div>
+                                        <div class="solid-line"></div>
+                                        <div class="solid-circle"></div>
+                                        <div class="game-changers_intro">
+                                            <h3>Business Analyst</h3>
+                                            <p>“Best part about Nogle is that we all work as one giant brain! One brain that feeds on knowledge, inspires for joy, and most of all innovates for the better. Working closely with different levels of stakeholder not only steepens my learning curve but also helps me to explore my horizon from a whole new level.” – Vincent Chang</p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="pure-g career2">
+                                    <div class="pure-u-1 pure-u-lg-1-6 pure-u-xl-5-12"><span class="dashed-line"></span>
+                                    </div>
+                                    <div class="pure-u-1 pure-u-lg-3-5 pure-u-xl-7-12">
+                                        <div class="game-changers_photo">
+                                            <span class="changer-2"></span>
+                                        </div>
+                                        <div class="solid-line"></div>
+                                        <div class="solid-circle"></div>
+                                        <div class="game-changers_intro">
+                                            <h3>Research Analyst</h3>
+                                            <p>"Nogle nurtures and incubates ideas into reality. Every day I am inspired by passionate colleagues and new challenges. It is exciting to be able to learn and grow at Nogle beyond my role!" - Casey Huang
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="pure-g career3">
+                                    <div class="pure-u-1 pure-u-lg-1-6 pure-u-xl-1-4"><span class="dashed-line"></span>
+                                    </div>
+                                    <div class="pure-u-1 pure-u-lg-3-5 pure-u-xl-7-12">
+                                        <div class="game-changers_photo">
+                                            <span class="changer-3"></span>
+                                        </div>
+                                        <div class="solid-line"></div>
+                                        <div class="solid-circle"></div>
+                                        <div class="game-changers_intro">
+                                            <h3>Senior Developer</h3>
+                                            <p>"A path that kicks off with a tedious school life, a degree, then to the success in a corporate job is what I was always hoping for. Everything changed drastically after I joined Nogle. Working at Nogle exploited my ability in doing what I love, and provided me with an opportunity to work alongside some of the most inspiring designers and brilliant hackers. For me, that makes every day different and exciting." - Vincent Wen</p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="pure-g short career4">
+                                    <div class="pure-u-1 pure-u-lg-1-6 pure-u-xl-7-12"><span class="dashed-line"></span>
+                                    </div>
+                                    <div class="pure-u-1 pure-u-lg-3-5 pure-u-xl-5-12">
+                                        <div class="game-changers_photo">
+                                            <span class="changer-4"></span>
+                                        </div>
+                                        <div class="solid-line"></div>
+                                        <div class="solid-circle"></div>
+                                        <div class="game-changers_intro short">
+                                            <h3>UX Designer</h3>
+                                            <p>"Nogle is a great place to work with smart and humorous people, we get inspired everyday, we experiment boldly and what’s more we laugh all the time!" - TingTing Wang</p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="pure-g career5">
+                                    <div class="pure-u-1 pure-u-lg-1-6 pure-u-xl-1-6"><span class="dashed-line"></span>
+                                    </div>
+                                    <div class="pure-u-1 pure-u-lg-3-5 pure-u-xl-7-12">
+                                        <div class="game-changers_photo">
+                                            <span class="changer-5"></span>
+                                        </div>
+                                        <div class="solid-line"></div>
+                                        <div class="solid-circle"></div>
+                                        <div class="game-changers_intro">
+                                            <h3>Senior Mobile Developer</h3>
+                                            <p>"Being in the mobile development world, it gives me an opportunity to make a difference in our society. Nogle helps me makes that difference by providing guidance and motivation. Just like a family, we treasure and embrace the growth and dedication together every step of the way." - Charlie Mai</p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="pure-g career6">
+                                    <div class="pure-u-1 pure-u-lg-1-6 pure-u-xl-5-12"><span class="dashed-line"></span>
+                                    </div>
+                                    <div class="pure-u-1 pure-u-lg-3-5 pure-u-xl-7-12">
+                                        <div class="game-changers_photo">
+                                            <span class="changer-6"></span>
+                                        </div>
+                                        <div class="solid-line"></div>
+                                        <div class="solid-circle"></div>
+                                        <div class="game-changers_intro">
+                                            <h3>Finance Specialist</h3>
+                                            <p>"We not only work hard but we play hard. Everyone can get the best balance between work and life. I truly enjoy working for this company and am excited to be part of the Nogle family." - Ginny Ko</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End game changers -->
+                        <!-- Job openings -->
+                        <div class="page-content careers_job-openings" id="job-openings">
+                            <div class="row">
+                                <h2>Job Openings</h2>
+                                <hr>
+                                <!-- Selection of job openings -->
+                                <div class="pure-g job-openings-intro">
+                                    <div class="pure-u-1 pure-u-lg-1-12"></div>
+                                    <div class="pure-u-1 pure-u-lg-5-6">
+                                        <p>Life and work in balance. Interesting and challenging projects. We are looking for the best minds, passionate and driven to create things that matter.</p>
+                                        <p>If you are interested in joining our family, the following are the currently available positions:</p>
+                                        <div>
+                                            <select class="select-job">
+                                                <!--option value="">All</option>
+                                                <option value="">3D Graphics, Animation & Simulation</option>l
+                                                <option value="">Big Data</option>
+                                                <option value="">Infrastructure Development</option>
+                                                <option value="">Software Development</option>
+                                                <option value="">UI/UX Design</option -->
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- List of job openings -->
+                                <article class="wrap">
+
+                                </article>
+                                <!-- Pagination -->
+                                <div class="job-page">
+                                </div>
+                            </div>
+                        </div>
+
+
+                </section>
+                </div>
+        </section>
+    </main>
+
+    <!-- footer
+================================================== -->
+    <footer>
+        <div class="triangle-footer-left"></div>
+        <div class="footer-section">
+            <div class="row pure-g">
+                <div class="pure-u-1 pure-u-mg-2-5 pure-u-lg-2-5 columns">
+                    <div class="footer-logo"></div>
+                </div>
+                <div class="pure-u-1 pure-u-mg-3-5 pure-u-lg-3-5 columns">
+                    <div class="footer-group">
+                        <h3>NOGLE</h3>
+                        <a href="services.html">Services</a>
+                        <a href="process.html">Our Processes</a>
+                        <a href="casestudy.html">Case Studies</a>
+                    </div>
+                    <div class="footer-group">
+                        <h3>COMPANY</h3>
+                        <a href="about.html">About Us</a>
+                        <a href="career.html#job-openings">Careers</a>
+                        <a href="career.html#nogle-life">Life at Nogle</a>
+                        <a href="career.html#game-changers">Game Changer</a>
+                    </div>
+                    <div class="footer-group">
+                        <h3>CONNECT</h3>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row pure-g">
+                <div class="pure-u-1 columns">
+                    <ul class="footer-nav">
+                        <li><a href="policy.html">Terms of Use & Privacy Policy</a></li>
+                        <li>Copyright © 2016 Nogle Limited. All rights reserved.</li>
+                    </ul>
+                </div>
+                <div id="go-top" style=""><a title="Back to Top" href="#">Go To Top</a></div>
+            </div>
+        </div>
+    </footer>
+    <!-- hidden templates -->
+    <div id="templates" style="display:none;">
+        <div class="pure-g job-list" onclick="location.href='#'">
+            <div class="pure-u-1 pure-u-lg-1-12"></div>
+            <div class="pure-u-1 pure-u-lg-5-12">
+                <div class="bullet">
+                    <span></span>
+                </div>
+                <div class="job-title"></div>
+            </div>
+            <div class="pure-u-1 pure-u-lg-5-12">
+                <p class="job-intro"></p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End-->
+    <!-- navigation transition -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

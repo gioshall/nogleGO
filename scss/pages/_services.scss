@@ -1,0 +1,131 @@
+/* services page
+================================================= */
+
+.service {
+    .banner-content {
+        background-size: cover;
+    }
+    .div-box {
+        margin-bottom: 300px;
+        @include max-screen(1060px) {
+            margin-bottom: 130px;
+        }
+    }
+}
+
+.service_list {
+    li {
+        position: relative;
+        margin-bottom: 80px;
+    }
+    h3 {
+        padding-top: 28px;
+        padding-right: 3px;
+        padding-left: 3px;
+        text-align: left;
+        background-color: white;
+        display: inline-block;
+    }
+}
+
+.service_detail {
+    li {
+        height: auto;
+        padding: 0;
+        margin-bottom: 12px;
+    }
+}
+
+.service_icon {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border: 1px solid $color-primary;
+    border-radius: 50px;
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.service_content {
+    position: absolute;
+    width: 285px;
+    height: 200px;
+    ul {
+        margin-left: 22px;
+    }
+    &.content_left {
+        top: 10px;
+        left: 10px;
+    }
+    &.content_right {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+.title_dotline {
+    position: absolute;
+    width: 330px;
+    height: 10px;
+    background-position: center;
+    background-repeat: repeat-x;
+    &.dot_left {
+        top: 50px;
+        left: 10px;
+    }
+    &.dot_right {
+        top: 50px;
+        right: 10px;
+    }
+}
+
+.title_dotline_r {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 330px;
+    height: 10px;
+    background-position: center;
+    background-repeat: repeat-x;
+}
+
+.vertical_line {
+    border-right: 1px solid $color-text-light;
+    height: 62px;
+    position: absolute;
+    &.v_left {
+        right: -96px;
+        bottom: 15px;
+    }
+    &.v_right {
+        left: -96px;
+        bottom: 15px;
+    }
+}
+
+@include max-screen(1060px) {
+    .title_dotline {
+        display: none;
+    }
+    .service_content {
+        position: relative;
+        margin: 0 auto;
+        width: 250px;
+        height: auto;
+        &.content_left {
+            left: 0;
+            right: 0;
+        }
+        &.content_right {
+            left: 0;
+            right: 0;
+        }
+        h3 {
+            padding-top: 10px;
+        }
+    }
+    .vertical_line {
+        display: none;
+    }
+}

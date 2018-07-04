@@ -1,0 +1,485 @@
+
+// variables
+$font-size-base: 14px;
+$line-height-base: 23px; //14px * 1.6
+
+// visibility for animated
+.visibility {
+    visibility: hidden;
+}
+.animated{
+    visibility: visible;
+}
+.display-none{
+    display: none !important;
+}
+.flex-control-nav {
+    bottom: 190px !important;
+    z-index: 10 !important;
+    padding-right: 40px !important;
+    li{
+        float: right !important;
+    }
+    @include max-screen(768px) {
+        bottom:150px !important;
+    }
+}
+
+/*for content padding*/
+.l-box {padding:0.5em;}
+.common-box{
+    padding: 60px;
+    @include max-screen(768px) {
+        padding:36px;
+    }
+}
+.column, .columns {
+   position: relative;
+   padding: 0 60px;
+   min-height: 1px;
+   float: left;
+   &.centered{
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+//div-box
+.div-box{
+    width: 100%;
+    margin: -210px auto 20px;
+    padding: 60px 120px;
+    z-index: 100;
+    background: #fff;
+    position: relative;
+    letter-spacing: normal;
+    @include max-screen(768px) {
+        margin-top:-170px;
+        padding: 60px 25px;
+        width: 95%;
+    }
+}
+.div-nobox{
+    width: 100%;
+    margin: -70px auto 20px;
+    padding: 60px;
+    z-index: 100;
+    position: relative;
+}
+//for last div padding bottom
+.last-div{
+    padding-bottom: 130px;
+    @include max-screen(768px) {
+        padding-bottom: 30px;
+    }
+}
+
+//default-box
+.default-box{
+    position: relative;
+    .row{
+     position: relative;
+     padding: 0 60px;
+      @include max-screen(767px) {
+            padding:0;
+        }
+    }
+    .div-content{
+        min-height: 400px;
+        padding-top: 140px;
+        padding-bottom: 60px;
+        @include max-screen(768px) {
+            padding: 45px+15px;
+            padding-top: 120px;
+        }
+        @include max-screen(568px) {
+            padding: 45px+15px;
+            padding-top: 70px;
+        }
+    }
+}
+
+//color-box
+.add-color-box{
+    position: relative;
+    .row{
+     position: relative;
+     padding: 0 60px;
+      @include max-screen(767px) {
+            padding:0;
+        }
+    }
+    .div-content-right,.div-content-left,.div-content-center{
+        min-height: 400px;
+        // padding-top: 200px;
+        // padding-bottom: 60px;
+        padding-top: 120px;
+        padding-bottom: 120px;
+        @include max-screen(767px) {
+            padding: 45px+15px;
+            padding-top: 30px;
+        }
+    }
+    .div-content-right{
+    float: right;
+    }
+    .div-content-left{
+    float: left;
+    }
+    .div-content-center{
+    float: left;
+    }
+}
+.color-box{
+    background-color: #000;
+    color: white;
+    padding:45px 60px;
+    margin-top: 0;
+    z-index: 100;
+    position: absolute;
+    > h2{
+        color: white;
+        letter-spacing: 0.01em;
+        margin-bottom: 30px;
+        @include max-screen(767px) {
+            visibility:hidden!important;
+            margin-bottom: 64px;
+            font-size: 32px;
+        }
+    }
+    @include max-screen(767px) {
+        padding-top: 0px;
+        padding:20px 40px 45px;
+        width: 90%;
+        position: relative;
+        &:before {
+            position: absolute;
+            content: attr(title) "";
+            z-index: 11;
+            background-color: #000;
+            padding: 45px 40px 0px;
+            width: 100%;
+            left: 0;
+            @extend h2;
+            letter-spacing: 0.01em;
+            color: #fff;
+            margin-bottom: 52px;
+            font-size: 32px;
+        }
+    }
+    &.color-box-left{
+        left: 0;
+    }
+    &.color-box-right{
+        right: 0;
+        margin-top: 40px;
+        @include max-screen(767px) {
+            margin-left: 10%;
+        }
+    }
+    &.color-box-center{
+        left: 40%;
+         @include max-screen(767px) {
+             left: 5%;
+         }
+    }
+}
+.mission{
+    background-color: #ccc;
+    min-height: 700px;
+}
+//mask left n right
+.mask_w_l{
+    height: 340px;
+    width: 100%;
+    background: no-repeat url(#{$imageUrlRoot}mask_white_l.png) center top;
+    position: absolute;
+    margin-top: -330px;
+    z-index: 2;
+    @include max-screen (768px) {
+        //height: 290px;
+    }
+    &.maskbottom{
+        position:static;
+        margin-top: -100px;
+    } 
+}
+.mask_w_l_bottom{
+    height: 340px;
+    width: 100%;
+    background: no-repeat url(#{$imageUrlRoot}mask_white_l_bottom.png) center bottom;
+    position: absolute;
+    margin-top: -100px;
+    z-index: 2;
+    @include max-screen (768px) {
+        height: 290px;
+    }
+}
+.mask_w_r{
+    height: 340px;
+    width: 100%;
+    background: no-repeat url(#{$imageUrlRoot}mask_white_r.png) center top;
+    position: absolute;
+    margin-top: -330px;
+    z-index: 2;
+    @include max-screen (768px) {
+        //height: 290px;
+    }
+    &.maskbottom{
+        position:static;
+        margin-top: -100px;
+    }
+}
+.mask_w_r_bottom{
+    height: 340px;
+    width: 100%;
+    background: no-repeat url(#{$imageUrlRoot}mask_white_r_bottom.png) center bottom;
+    position: absolute;
+    margin-top: -100px;
+    z-index: 2;
+    @include max-screen (768px) {
+        height: 290px;
+    }
+}
+.mask_bk_l{
+    height: 270px;
+    width: 100%;
+    background: no-repeat url(#{$imageUrlRoot}mask_bk_l.png) center top;
+    position: absolute;
+    margin-top: -265px;
+    z-index: 150;
+}
+.mask_bk_r{
+    height: 270px;
+    width: 100%;
+    background: no-repeat url(#{$imageUrlRoot}mask_bk_r.png) center top;
+    position: absolute;
+    margin-top: -265px;
+    z-index: 150;
+}
+// start
+.page-content {
+    position: relative;
+    .icon-list {
+        text-align: center;
+        margin-top: 85px;
+        img{max-width: 120px;}
+    }
+    .with-description {
+        margin-bottom: 0;
+        @extend %clearfix;
+        > li {
+            margin-bottom: 40px;
+            // height: 210px;
+            float: left;
+            > img {
+                margin-bottom: 10px;
+                width: 110px;
+            }
+            .icon-description {
+                color: $color-text-strong;
+                width: 60%;
+                margin: 0 auto;
+                text-align: center;
+            }
+        }
+        + button {
+            margin-bottom: 100px;
+        }
+    }
+    .sequence {
+        width: 25px;
+        height: 25px;
+        line-height: $line-height-base;
+        display: block;
+        color: $color-grey-strong;   
+        border: 1px solid $color-grey-strong;
+        margin: 0 auto 10px;
+        @include rounded(13px);
+    }
+}
+
+
+hr{
+    width:7%;
+    min-width: 95px;
+    text-align:left;
+    margin: 15px auto 30px;
+    border: none;
+    border-bottom:1px solid $color-primary;
+}
+
+p.s-title{
+    font-style: 14px;
+    margin: 10px 0;
+    color:$color-grey-strong;
+}
+.step-image {
+    width: 160px;
+    height: 160px;
+    @include rounded(80px);
+    background-position: center;
+    overflow: hidden;
+    border: 1px solid $color-grey-light;
+    margin: 24px auto;
+}
+//image with description block
+.imgWithDesc {
+    position: relative;
+    // height: $bannerS-height;
+    h3{
+        font-size: ceil($font-size-base * 1.65); //24px
+        line-height: 30px;
+        text-transform: uppercase;
+    }
+    p{font-family: $font-sans;}
+    &:nth-child(even) {
+        background-color: $color-grey-100;
+    }
+    .row {
+        &:before {
+            display: block;
+        }
+    }
+    .desc {
+        padding: 20px;
+        p {
+            margin-bottom: 16px;
+            line-height: $line-height-base;
+        }
+    }
+    .demoImg {
+        text-align: center;
+        height: $bannerS-height;
+        overflow: hidden;
+        img {
+            height: 100%;
+        }
+    }
+    .leftImg, .rightImg {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        .desc {
+            
+        }
+        .demoImg {
+            
+        }
+    }
+    .leftImg{
+        .demoImg {
+            text-align: left;
+            @include max-screen(767px) {
+                text-align: center;
+            }
+        }
+    }
+    .rightImg {
+        .demoImg {
+            text-align: right;
+            @include max-screen(767px) {
+                text-align: center;
+            }
+        }
+    }
+    .videobtn {
+        border: 1px solid #FE6057;
+        background:none;
+        color: #FE6057;
+        &:after {
+            content: "";
+            background: url("#{$imageUrlRoot}btnic_play-red.png") no-repeat right;
+            width: 14px;
+            height: 15px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        &:hover {
+            @include switch(all, 0.2s);
+            background-color: #FE6057;
+            color: #fff;
+            &:after {
+                @include switch(all, 0.2s);
+                background: url("#{$imageUrlRoot}btnic_play.png") no-repeat;
+            }
+        }
+    }
+}
+
+/*hide go to top*/
+#go-top{display: none;}
+
+
+/* ------- hidden and visible for content -------*/
+.visible-xs{
+    display: none !important;
+    @include max-screen(767px) {
+        display: block !important;
+    }
+}
+.hidden-xs {
+    display: block !important;
+    @include max-screen(767px) {
+        display: none !important;
+    }
+}
+
+/* ------- triangle for background -------*/
+/*Up-left pointing*/
+.triangle {
+    width: 100%;
+    min-height: 480px;
+    //overflow: hidden;
+    position: relative;
+}
+.triangle-up-left {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left: 0px;
+    border-bottom: 50px solid transparent;
+    border-left: 1000px solid #FFFFFF;
+    position: absolute;
+        top: 0;
+    width: 100%;
+    z-index: 10;
+}
+.triangle-up-right {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+        top: 0;
+    border-left: 1000px solid transparent;
+    border-top: 50px solid #FFFFFF;
+    width: 100%;
+    z-index: 10;
+}
+.triangle-bottom-left{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-right: 1000px solid transparent;
+    border-bottom: 50px solid #FFFFFF;
+    position: absolute;
+        bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+.triangle-bottom-right {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-right: 1000px solid #FFFFFF;
+    position: absolute;
+        bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+

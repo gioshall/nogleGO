@@ -1,0 +1,344 @@
+/* case page
+================================================= */
+
+.casestudy {
+    a.btn-circle-bordered {
+        margin: 0 auto;
+        color: #fff;
+        width: 72px;
+        height: 72px;
+        background: no-repeat url(#{$imageUrlRoot}csaestudy/arrow.png) center;
+        @include border-all(1px, solid, #fff);
+        @include rounded(100px);
+        margin: 0 auto;
+        display: block;
+        &:hover {
+            @include opacity(0.7);
+        }
+    }
+    a.btn-circle-bordered-bk {
+        margin: 0 auto;
+        color: #fff;
+        width: 72px;
+        height: 72px;
+        background: no-repeat url(#{$imageUrlRoot}csaestudy/arrow_bk.png) center;
+        @include border-all(1px, solid, #000);
+        @include rounded(100px);
+        margin: 0 auto;
+        display: block;
+        &:hover {
+            @include opacity(0.7);
+        }
+    }
+    .stylemebox {
+        background: no-repeat url(#{$imageUrlRoot}csaestudy/bg_styleme.png) center;
+        @include background-size(cover);
+        //min-height: 1000px;
+        .mask_w_r {
+            height: 610px;
+            @include max-screen(500px) {
+                height: 500px;
+            }
+        }
+        .color-box {
+            background-color: $color-styleme;
+            &:before {
+                background-color: $color-styleme;
+            }
+            @include max-screen(900px) {
+                min-width: 400px;
+            }
+            @include max-screen(500px) {
+                min-width: auto;
+            }
+        }
+        .add-color-box {
+            padding-top: 200px;
+            padding-bottom: 60px;
+        }
+        .mockup_product {
+            background: no-repeat url(#{$imageUrlRoot}csaestudy/mock_styleme.png) center;
+            width: 960px;
+            height: 574px;
+            position: absolute;
+            z-index: 105;
+            top: 300px;
+            left: 200px;
+            @include max-screen(900px) {
+                left: 255px;
+            }
+            @include max-screen(500px) {
+                width: 660px;
+                height: 395px;
+                @include background-size(660px);
+                left: -200px;
+                margin-top: 60px;
+            }
+        }
+        .div-content-right {
+            padding-bottom: 500px;
+        }
+    }
+    .bondbox {
+        background: no-repeat url(#{$imageUrlRoot}csaestudy/bg_bond.png) center;
+        @include background-size(cover);
+        min-height: 700px;
+        margin-top: 450px;
+        @include max-screen(500px) {
+           margin-top:350px;
+        }
+        .color-box {
+            background-color: $color-bond;
+            color: $color-text-strong;
+            &.color-box-center {
+                @include max-screen(900px) {
+                left: auto;
+                right: 0;
+                top: 170px;
+                min-width: 400px;
+                }
+                @include max-screen(500px) {
+                left: 5%;
+                top: 270px;
+                min-width: auto;
+                }
+            }
+            h2 {
+                color: $color-text-strong;
+            }
+            &:before {
+                background-color: $color-bond;
+                color: $color-text-strong;
+            }
+        }
+        .mockup_product {
+            background: no-repeat url(#{$imageUrlRoot}csaestudy/mock_bondlinc.png) center;
+            width: 703px;
+            height: 818px;
+            top: -198px;
+            left: -240px;
+            position: absolute;
+            z-index: 110;
+            @include max-screen(900px) {
+                left: -320px;
+            }
+            @include max-screen(500px) {
+                width: 500px;
+                height: 582px;
+                top: -160px;
+                left: -240px;
+                @include background-size(500px);
+            }
+        }
+        .div-content-center {
+            padding-bottom: 500px;
+        }
+    }
+    .ntsbox {
+        background: #fff;
+        min-height: 590px;
+        margin-top: 20px;
+        .color-box {
+            background-color: $color-nts;
+            margin-top: -280px;
+            &:before {
+                background-color: $color-nts;
+            }
+            @include max-screen(900px) {
+                min-width: 400px;
+            }
+            @include max-screen(500px) {
+                margin-top: -310px;
+                padding-bottom: 100px;
+                min-width: auto;
+            }
+        }
+        &.add-color-box .div-content-right {
+            padding-top: 0;
+        }
+        .mockup_product {
+            background: no-repeat url(#{$imageUrlRoot}csaestudy/mock_nts.png) center;
+            width: 951px;
+            height: 580px;
+            top: -200px;
+            left: 180px;
+            position: absolute;
+            z-index: 110;
+            @include max-screen(900px) {
+                left: 210px;
+                top: -100px;
+            }
+            @include max-screen(500px) {
+                width: 600px;
+                height: 363px;
+                @include background-size(600px);
+                left: 15px;
+                top: 100px;
+            }
+        }
+    }
+}
+
+
+/* case other page
+================================================= */
+
+.case-study {
+    padding-top: 100px;
+    background-size: cover;
+    /* btn of visit */
+    .common-box {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .visit {
+        display: block;
+        margin: 0 auto;
+        margin-top: 40px;
+        width: 230px;
+        font-size: 18px;
+        color: black;
+        border-color: black;
+        /* hide link button because there's no website for the case currently */
+        display: none;
+        &:hover {
+            color: white;
+            background-color: black;
+        }
+    }
+    .mask_w_r_bottom {
+        z-index: 0;
+        margin-top: 0px;
+    }
+    .case-study_logo {
+        text-align: center;
+        img {
+            display: block;
+            margin: 100px auto 50px;
+            width: 250px;
+            @include max-screen (900px) {
+                max-width: 60%;
+                margin-top: 20px;
+            }
+        }
+        .visit {
+            margin-top: 40px;
+            margin-bottom: 38px;
+        }
+    }
+    .case-study_pic {
+        width: 100%;
+        z-index: 2;
+        position: relative;
+        border-radius: 0px;
+    }
+    /* Basic elements */
+    blockquote {
+        p {
+            max-width: 460px;
+            margin-bottom: 0px;
+        }
+        cite {
+            margin-top: 24px;
+        }
+    }
+    p.lead {
+        opacity: 0.6;
+        text-align: center;
+        text-transform: uppercase;
+        + hr {
+            margin-top: 45px;
+            margin-bottom: 45px;
+            min-width: 75px;
+        }
+    }
+    h3 {
+        color: black;
+        margin: 40px 0 20px;
+    }
+    ul {
+        list-style: inherit;
+        padding-left: 14px;
+    }
+    /* Layout : footer, colored baground */
+    .container {
+        &.triangle {
+            padding: 0px;
+            padding-bottom: 260px;
+        }
+    }
+    ._is_colored {
+        padding-bottom: 300px;
+        .pure-g {
+            position: relative;
+            z-index: 11;
+        }
+    }
+    /* To indent element and clear float problem */
+    ._is_indent {
+        float: right;
+    }
+    img._is_indent {
+        margin-bottom: 40px;
+    }
+    .clearfix:after {
+        content: "";
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+    /* Case specific style ----------------------------------------------------- */
+    &.styleme {
+        background: url("../../nogle/images/bg_styleme-girls.jpg") no-repeat 100% 70%;
+        .case-study_logo {
+            .visit {
+                border-color: $color-styleme;
+                color: $color-styleme;
+                font-size: 18px;
+                &:hover {
+                    color: white;
+                    background-color: $color-styleme;
+                }
+            }
+        }
+        ._is_colored {
+            background-color: rgba(254, 97, 88, 0.7);
+        }
+    }
+    &.bondlinc {
+        background: url("../../nogle/images/bg_bond.jpg") no-repeat 100% 90%;
+        .case-study_logo {
+            .visit {
+                border-color: $color-bond;
+                color: $color-bond;
+                font-size: 18px;
+                &:hover {
+                    color: white;
+                    background-color: $color-bond;
+                }
+            }
+        }
+        ._is_colored {
+            background-color: rgba(80, 227, 194, 0.7);
+        }
+    }
+    &.nts {
+        background: url("../../nogle/images/bg_nts.jpg") no-repeat 100% 90%;
+        background-size: cover;
+        .case-study_logo {
+            .visit {
+                border-color: $color-nts;
+                color: $color-nts;
+                font-size: 18px;
+                &:hover {
+                    color: white;
+                    background-color: $color-nts;
+                }
+            }
+        }
+        ._is_colored {
+            background-color: rgba(0, 141, 207, 0.6);
+        }
+    }
+}

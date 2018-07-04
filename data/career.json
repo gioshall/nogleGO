@@ -1,0 +1,90 @@
+{
+	"job":[
+		{
+			"category" : "3D Graphics, Animation & Simulation",
+			"jobList" : [
+				{
+					"position" : "Developer, Computer Vision",
+					"description" : "Algorithm development of modeling clothes, bags, shoes, accessories etc… from 2D images and depth information."
+				},
+				{
+					"position" : "Developer, Computer Graphics - Rendering",
+					"description" : "Rendering of realistic clothes, human skin, hair, …etc."
+				},
+				{
+					"position" : "Computer Graphics Engineer - Cloth Simulation Engine",
+					"description" : "Algorithm development of real-time physical simulation of clothes."
+				},
+				{
+					"position" : "Clothing Patternmaker",
+					"description" : "Creating 2D garments and simulating 3D clothes for the fashion industry."
+				}
+			]
+		},	
+		{
+			"category" : "Big Data",
+			"jobList" : [
+				{
+					"position" : "Data Scientist",
+					"description" : "Quantitative research on big data and development of analytical and back-testing framework."
+				},
+				{
+					"position" : "Developer, Cloud",
+					"description" : "Search data from huge volume with fast manner and support data analysis."
+				}
+			]
+		},
+		{
+			"category" : "Infrastructure Development",
+			"jobList" : [
+				{
+					"position" : "Network Engineer",
+					"description" : "Lead infrastructure team to build better network quality."
+				},
+				{
+					"position" : "Developer, DBA",
+					"description" : "Research storage for database and tune performance."
+				}
+			]
+		},
+		{
+			"category" : "Software Development",
+			"jobList" : [
+				{
+					"position" : "Team Lead, Research and Development",
+					"description" : "Unlimited boundary of exploring new technology and coach team members"
+				},
+				{
+					"position" : "Developer, Frontend (HFT)",
+					"description" : "Building the front-end for the next generation automated trading system that is positioned to reach millions of customers."
+				},
+				{
+					"position" : "Developer, Frontend (Fashion)",
+					"description" : "Building the front-end for the 3D online fitting room."
+				},
+				{
+					"position" : "C++ Developer",
+					"description" : "Development of their Real-Time, Low Latency Trading applications."
+				},
+				{
+					"position" : "Developer, Backend",
+					"description" : "Adopt framework and design pattern."
+				}
+			]
+		},
+		{
+			"category" : "UI/UX Design",
+			"jobList" : [
+				{
+					"position" : "UI/UX Manager",
+					"description" : "Leading and inspiring a design team to deliver top-notch user interface/user experience."
+				},
+				{
+					"position" : "UI/UX Designer",
+					"description" : "Translating high-level requirements into interaction flows and artifacts, and transforming them into beautiful, intuitive, and functional user interfaces."
+				}
+			]
+		}
+	]
+
+}

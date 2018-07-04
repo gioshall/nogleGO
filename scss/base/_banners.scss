@@ -1,0 +1,212 @@
+//variables
+$bannerL-height: 760px;
+$bannerM-height: 600px;
+$bannerS-height: 328px;
+$bannerXS-height:230px;
+.hidden {
+    display: none !important;
+}
+
+//all banner style
+.large-banner {
+    height: $bannerL-height;
+    background-color: gray;
+    position: relative;
+    text-align: center;
+    .banner-container {
+        height: $bannerM-height;
+        &:before {
+            content: "";
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    .slide-content {
+        > li {
+            height: $bannerL-height;
+            background-color: gray;
+            text-align: center;
+            // &:before {
+            //     content: "";
+            //     height: 100%;
+            //     display: inline-block;
+            //     vertical-align: middle;
+            // }
+        }
+        button {
+            margin-top: 15px;
+        }
+    }
+}
+
+
+/*button inside large banner  --------------------------------------------------------- */
+
+.ic-scrolldown {
+    display: block;
+    position: absolute;
+    left: 25%;
+    bottom: 12px;
+    width: 50%;
+    height: 13px;
+    background: url("#{$imageUrlRoot}ic_scrolldown.png") center no-repeat;
+    z-index: 1;
+}
+
+// common banner style
+.banner {
+    margin-bottom: 60px;
+    h1,
+    h3 {
+        color: white;
+    }
+    h1.quote {
+        position: relative;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+    h1.quote:before {
+        content: "";
+        background: url(../images/ic_quote-wt.png) no-repeat;
+        background-position: center;
+        background-size: 100%;
+        width: 48px;
+        height: 35px;
+        position: absolute;
+        left: -50px;
+        top: -5px;
+        @include max-screen(768px) {
+            width: 36px;
+            left: -27px;
+            top: -16px;
+        }
+    }
+    .banner-content {
+        text-align: center;
+        &:before {
+            content: "";
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    .headline {
+        margin-top: -30px;
+        display: inline-block;
+        vertical-align: middle;
+        width: 40%;
+        > h2 {
+            text-align: center;
+            font-size: 48px;
+            line-height: 62px;
+            margin-bottom: 12px;
+            color: white;
+            @include max-screen(480px) {
+                font-size: 48px;
+                line-height: 56px;
+            }
+            + p {
+                font-size: 18px;
+                line-height: 28px;
+                width: 80%;
+                margin: 0 auto;
+                color: white;
+            }
+        }
+        @include min-screen(768px) {
+            width: 60%;
+        }
+        @include max-screen(480px) {
+            width: 80%;
+        }
+    }
+    button {
+        margin-top: 25px;
+        &.videobtn {
+            &::after {
+                content: "";
+                background: url("#{$imageUrlRoot}btnic_play.png") no-repeat;
+                width: 14px;
+                height: 15px;
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 6px;
+            }
+        }
+    }
+}
+
+
+/* video background setting
+========================================================================= */
+
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+}
+
+.no-video .video-container video,
+.touch .video-container video {
+    display: none;
+}
+
+.no-video .video-container .poster,
+.touch .video-container .poster {
+    display: block !important;
+}
+
+.video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+    .video-title-container {
+        z-index: 3;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: #FFF;
+    }
+    .poster img {
+        width: 100%;
+        bottom: 0;
+        position: absolute;
+    }
+    .filter {
+        z-index: 2;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 100%;
+    }
+    video {
+        // position: absolute;
+        // z-index: 0;
+        // bottom: 0;
+    }
+}
+
+.video-container .video-container video.fillWidth {
+    width: 100%;
+}
+
+
+/* styleguide banner
+================================================= */
+
+.feature {
+    text-align: center;
+    .banner {
+        .banner-content {
+            background: url('https://lh5.ggpht.com/X6S-3G1irwe649hOPWe2GYqcl4eSxK69r6Y1CGoC9oXk45MRwTTywpz0vdVoQS0_vVVX=h900') center top no-repeat;
+            height: $bannerM-height;
+            @include background-size(cover);
+        }
+    }
+}

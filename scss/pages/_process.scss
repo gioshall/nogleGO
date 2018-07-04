@@ -1,0 +1,215 @@
+/* process page
+================================================= */
+
+.process {
+    overflow: hidden;
+    .slides {
+        .banner-content {
+            background: #000 url('#{$imageUrlRoot}bg_mainBanner-process.jpg') center bottom no-repeat;
+            background-size: cover;
+            @include max-screen(478px) {
+                background-position: 67% bottom;
+            }
+        }
+    }
+    .page-content {
+        padding-bottom: 0;
+    }
+    .div-box {
+        margin-bottom: 0;
+        padding-left: 16.7%;
+        padding-right: 16.7%;
+    }
+    .common-box {
+        padding-left: 16.7%;
+        padding-right: 16.7%;
+    }
+    .div-content-right {
+        padding-right: 16.7%;
+        @include max-screen(767px) {
+            padding-top: 90px;
+        }
+    }
+    .div-content {
+        @include max-screen(767px) {
+            padding-top: 90px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .default-box {
+        .row {}
+    }
+    h2,
+    .color-box:before {
+        text-align: center;
+        margin-bottom: 36px;
+        + hr {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.process_footer {
+    margin-top: -140px;
+}
+
+.satellite_bg {
+    background:transparent url('#{$imageUrlRoot}bg_satellite.jpg') top center no-repeat;
+    @include background-size(cover);
+}
+
+.rocket-launch {
+    background:#0e1626 url('#{$imageUrlRoot}bg_rocketLaunch.jpg') center no-repeat;
+    padding-top: 100px;
+    padding-bottom: 400px;
+    height: 900px;
+    @include background-size(cover);
+    @include max-screen(320px) {
+        height: 990px;
+    }
+    h2,
+    p {
+        color: #fff;
+    }
+    hr {
+        border-color: #fff;
+    }
+}
+
+.satellite-map {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: -115px;
+    left: 35%;
+    z-index: 101;
+    @include max-screen(768px) {
+        left: 25%;
+    }
+    @include max-screen(568px) {
+        left: 15%;
+        top: 395px;
+    }
+    div {
+        position: absolute;
+    }
+    .lineA {
+        left: -177px;
+        top: 0;
+        width: 190px;
+        height: 309px;
+        background: url('#{$imageUrlRoot}img_satellite-lineA.png') left top no-repeat;
+    }
+    .lineB {
+        left: -204px;
+        top: 425px;
+        width: 63px;
+        height: 358px;
+        background: url('#{$imageUrlRoot}img_satellite-lineB.png') left top no-repeat;
+    }
+    .lineC {
+        left: -14px;
+        top: 935px;
+        width: 520px;
+        height: 197px;
+        background: url('#{$imageUrlRoot}img_satellite-lineC.png') left top no-repeat;
+    }
+    .lineD {
+        left: -175px;
+        top: 1025px;
+        width: 43px;
+        height: 349px;
+        background: url('#{$imageUrlRoot}img_satellite-lineD.png') left top no-repeat;
+    }
+    .lineE {
+        left: -66px;
+        top: 1012px;
+        width: 813px;
+        height: 1646px;
+        background: url('#{$imageUrlRoot}img_satellite-lineE.png') left top no-repeat;
+    }
+    .point {
+        width: 120px;
+        height: 120px;
+        background-color: rgba(255, 255, 255, 0.2);
+        background-position: center;
+        background-repeat: no-repeat;
+        @include border-all(1px,
+        solid,
+        $color-primary);
+        @include rounded(60px);
+    }
+    .mainPoint {
+        width: 316px;
+        height: 316px;
+        left: -279px;
+        top: 747px;
+        background-color: rgba(0, 72, 139, 0.1);
+        @include rounded(158px);
+    }
+    .discover {
+        left: -270px;
+        top: 300px;
+        background-image: url('#{$imageUrlRoot}ic_discover.png');
+    }
+    .satellite {
+        width: 655px;
+        height: 444px;
+        left: -295px;
+        top: 762px;
+        background-image: url('#{$imageUrlRoot}img_satellite.png');
+        background-repeat: no-repeat;
+        background-size: 85%;
+    }
+    .design {
+        left: 509px;
+        top: 1091px;
+        background-image: url('#{$imageUrlRoot}ic_design.png');
+    }
+    .experimentation {
+        left: -241px;
+        top: 1372px;
+        background-image: url('#{$imageUrlRoot}ic_experimentation.png');
+    }
+    .rocket {
+        width: 64px;
+        height: 540px;
+        left: 680px;
+        top: 2000px;
+        background-image: url('#{$imageUrlRoot}ic_rocket.png');
+        background-repeat: no-repeat;
+        @include max-screen (800px) {
+            left: 440px;
+        }
+        @include max-screen (568px) {
+            left: 290px;
+            top: 2110px;
+        }
+        @include max-screen (375px) {
+            left: 240px;
+            top: 2244px;
+        }
+        // -moz-animation: float2 4s infinite;
+        // -webkit-animation: float2 4s infinite;
+        // animation: float2 4s infinite;
+        // animation-delay:2s;
+        // -webkit-animation-delay:2s
+    }
+}
+
+@keyframes float2 {
+    0%,
+    100% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -moz-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+}

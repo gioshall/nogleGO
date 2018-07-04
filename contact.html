@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>Nogle - contact</title>
+    <meta name="theme-color" content="#00488B">
+    <meta name="msapplication-TileColor" content="#00488B">
+    <link rel="icon" sizes="192x192" href="images/nogle-browsericon.png">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <!--[if lt IE 9]>
+      <script src="js/ie/html5.js"></script>
+      <script src="js/ie/respond.js"></script>
+      <script src="js/modernizr.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Java Script
+   ================================================== -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/flexslider-min.js"></script>
+    <!-- main banner slider -->
+    <script type="text/javascript" charset="utf-8">
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                controlNav: true,
+                animation: 'fade',
+                animationLoop: true,
+                slideshow: true,
+                video: false,
+                before: function () {
+                    $('video').each(function () {
+                        $(this).get(0).load();
+                    });
+                }
+            });
+        });
+    </script>
+    <!-- Google map
+    
+   ================================================== -->
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <!-- script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQuyGWeVHBuwtqmHC4wcx0HoBPIgGl10Y&sensor=false"></script -->
+    <script>
+        var myCenter = new google.maps.LatLng(25.035340, 121.569013);
+		
+
+        function initialize() {
+			var styles = [
+			{
+				"featureType": "landscape",
+				"elementType": "labels",
+				"stylers": [
+					{ "lightness": 19 }
+				]
+			},{
+				"stylers": [
+					{ "gamma": 3.66 },
+					{ "lightness": 19 },
+					{ "saturation": -28 }
+				]
+			},{
+				"featureType": "transit",
+				"stylers": [
+					{ "visibility": "off" }
+				]
+			},{
+				"featureType": "poi",
+				"stylers": [
+					{ "visibility": "off" }
+				]
+			}
+			];
+            var mapProp = {
+                center: myCenter,
+                zoom: 17,
+                scrollwheel: false,
+                mapTypeId: [google.maps.MapTypeId.ROADMAP, 'map_style']
+            };
+			// Create a new StyledMapType object, passing it the array of styles,
+			// as well as the name to be displayed on the map type control.
+			var styledMap = new google.maps.StyledMapType(styles,{name: "Styled Map"});
+
+			// Create a map object, and include the MapTypeId to add
+			// to the map type control.  
+
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+			//Associate the styled map with the MapTypeId and set it to display.
+			map.mapTypes.set('map_style', styledMap);
+			map.setMapTypeId('map_style');
+
+            var marker = new google.maps.Marker({
+                position: myCenter,
+                icon: 'images/map-marker.png'
+            });
+
+            marker.setMap(map);
+			console.log("felix");
+        }
+
+
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+
+<body>
+    <!-- Header============ -->
+    <header>
+        <div class="row pure-g">
+            <div class="pure-u-1 columns">
+                <div class="logo">
+                    <a href="index.html"><img alt="" src="images/logo.png"></a>
+                </div>
+                <nav id="nav-wrap">
+                    <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+                        <span class="hamburger hamburger-1"></span>
+                        <span class="hamburger hamburger-2"></span>
+                        <span class="hamburger hamburger-3"></span>
+                    </a>
+                    <a class="mobile-btn" href="#" title="Hide navigation">
+                        <span class="hamburger hamburger-1"></span>
+                        <span class="hamburger hamburger-2"></span>
+                        <span class="hamburger hamburger-3"></span>
+                    </a>
+                    <ul id="nav" class="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="process.html">Our Process</a></li>
+                        <li><a href="casestudy.html">Case Studies</a></li>
+                        <li><a href="career.html">Careers</a></li>
+                        <li class="current"><a href="contact.html">Contact us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+    <main>
+        <section class="contact">
+            <div class="container">
+                <!-- main banner slider -->
+                <div class="flexslider large-banner banner pure-u-1 triangle">
+                    <ul class="slides slide-content">
+                        <li class="ten pure-u-1 centered text-center banner-content" style="background: url('images/bg_banner_Contact.jpg') center no-repeat;background-size: cover;">
+                            <div class="headline">
+                                <h1 class="quote">With presence in several countries, Nogle is a global software development firm.</h1>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="triangle-bottom-right"></div>
+                </div>
+                <!-- main banner slider end-->
+            </div>
+            <div class="container">
+                <div class="page-content">
+                    <div class="row pure-g">
+                        <div class="div-box pure-u-1">
+                            <h2>Get in touch with us</h2>
+                            <hr>
+                            <p>Our main development office is located in <strong>Taipei</strong>.
+                                <br>Interested in our solutions?
+                                <br> Have a project you would like us to hear about?</p>
+                            <a href="mailto:info@nogle.com?Subject=Hello%20Nogle" class="btn-bordered email">Email us</a>
+                            <p class="lead add-bottom">
+                                <strong>CALL US</strong>
+                                <br>
+                                <span>+886 2 2345 9399</span>
+                            </p>
+
+                            <p class="lead add-bottom">
+                                <strong>FIND US</strong>
+                                <br>
+                                <span>7F, No. 105 Songren Rd., Xinyi Dist., Taipei <br>11073, Taiwan</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- page-content End-->
+            </div>
+            <div class="container map triangle">
+                <div class="triangle-up-right"></div>
+                <!-- Google map -->
+                <div id="googleMap" style="width:100%;height:80vh;"></div>
+
+            </div>
+        </section>
+
+    </main>
+    <!-- footer
+================================================== -->
+    <footer>
+        <div class="triangle-footer-right"></div>
+        <div class="footer-section">
+            <div class="row pure-g">
+                <div class="pure-u-1 pure-u-mg-2-5 pure-u-lg-2-5 columns">
+                    <div class="footer-logo"></div>
+                </div>
+                <div class="pure-u-1 pure-u-mg-3-5 pure-u-lg-3-5 columns">
+                     <div class="footer-group">
+                        <h3>NOGLE</h3>
+                        <a href="services.html">Services</a>
+                        <a href="process.html">Our Processes</a>
+                        <a href="casestudy.html">Case Studies</a>
+                    </div>
+                    <div class="footer-group">
+                        <h3>COMPANY</h3>
+                        <a href="about.html">About Us</a>
+                        <a href="career.html#job-openings">Careers</a>
+                        <a href="career.html#nogle-life">Life at Nogle</a>
+                        <a href="career.html#game-changers">Game Changer</a>
+                    </div>
+                    <div class="footer-group">
+                        <h3>CONNECT</h3>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row pure-g">
+                <div class="pure-u-1 columns">
+                    <ul class="footer-nav">
+                        <li><a href="policy.html">Terms of Use & Privacy Policy</a></li>
+                        <li>Copyright © 2016 Nogle Limited. All rights reserved.</li>
+                    </ul>
+                </div>
+                <div id="go-top" style=""><a title="Back to Top" href="#">Go To Top</a></div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End-->
+     <!-- navigation transition -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
